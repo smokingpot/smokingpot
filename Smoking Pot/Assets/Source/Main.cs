@@ -8,6 +8,7 @@ public class Main : MonoBehaviour
     {
         public float Time;
         public float Speed;
+        public SpawnPoint[] Points;
     }
 
     public LevelParameters[] Levels;
