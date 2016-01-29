@@ -15,4 +15,8 @@ public class Main : MonoBehaviour
     private void Start()
     {
     }
+
+    public void LoadLevel(LevelParameters parameters)
+    {
+    }
 }
