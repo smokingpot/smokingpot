@@ -7,9 +7,16 @@ public class SpawnPoint : MonoBehaviour
 
     //TODO: random speed and angle
 
+    public Ingredient TestIngredient;
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
         Gizmos.DrawRay(transform.position, MinVelocity);
+    }
+
+    public void SpawnTestIngredient()
+    {
+        TestIngredient.Init(this);
     }
 }
