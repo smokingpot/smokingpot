@@ -228,6 +228,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NumberText: {fileID: 11433296}
+  ScoreText: {fileID: 11445142}
 --- !u!222 &22224342
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -326,6 +327,10 @@ Prefab:
       propertyPath: NumberText
       value: 
       objectReference: {fileID: 11433296}
+    - target: {fileID: 0}
+      propertyPath: ScoreText
+      value: 
+      objectReference: {fileID: 11445142}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 163036}

@@ -57,12 +57,12 @@ public class Main : MonoBehaviour
 
     private void HandleGameEnd()
     {
+        OpenLevelCompletedWindow();
+
         _currentGame.CurrentLevel.gameObject.SetActive(false);
         _currentGame.End -= HandleGameEnd;
         Destroy(_currentGame.gameObject);
         _currentGame = null;
-
-        OpenLevelCompletedWindow();
     }
 
     private void StartSelectedGame()
@@ -123,6 +123,7 @@ public class Main : MonoBehaviour
     private void OpenLevelCompletedWindow()
     {
         _levelCompletedWindow = OpenWindow<LevelCompletedWindow>(LevelCompletedWindowPrefab);
+        _levelCompletedWindow.Score = _currentGame.CurrentLevel.GetResult();
         _levelCompletedWindow.ReplayClick += HandleRaplayClick;
         _levelCompletedWindow.ExitClick += HandleExitClick;
     }

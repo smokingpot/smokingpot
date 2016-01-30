@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class LevelCompletedWindow : GameWindow
 {
+    public Text ScoreText;
+
     public event Action ReplayClick;
     public event Action ExitClick;
 
@@ -20,6 +22,14 @@ public class LevelCompletedWindow : GameWindow
         if (ExitClick != null)
         {
             ExitClick();
+        }
+    }
+
+    public int Score
+    {
+        set
+        {
+            ScoreText.text = value.ToString() + "%";
         }
     }
 }

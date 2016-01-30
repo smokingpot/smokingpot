@@ -25,7 +25,7 @@ public class LevelSelectionWindow : GameWindow
             GameObject entryObj = Instantiate(LevelEntryPrefab);
             entryObj.transform.SetParent(Container, false);
             LevelEntry entry = entryObj.GetComponent<LevelEntry>();
-            entry.Init(this, level.Number);
+            entry.Init(this, level.Number, level.GetResult());
         }
     }
 }

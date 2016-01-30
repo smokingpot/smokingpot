@@ -51,7 +51,7 @@ public class Ingredient : MonoBehaviour
         _rigidbody.AddForceAtPosition(-1.0f * force, position);
     }
 
-    public string Name
+    public string IngredientName
     {
         get { return _renderer.sprite.name; }
     }
