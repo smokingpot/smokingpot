@@ -315,6 +315,10 @@ Prefab:
       propertyPath: TestIngredient
       value: 
       objectReference: {fileID: 1326945515}
+    - target: {fileID: 11417834, guid: 441f7babb7b1ad941a5db17aa627caf6, type: 2}
+      propertyPath: CurrentInputMode
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 441f7babb7b1ad941a5db17aa627caf6, type: 2}
   m_IsPrefabParent: 0

@@ -42,6 +42,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PotPrefab: {fileID: 104298, guid: d7ce50c9c6b9439448d400088d3712cf, type: 2}
   IngredientPrefab: {fileID: 102784, guid: 39033a526706e11418f42a7720b0c63e, type: 2}
+  TestSpawnPoint: {fileID: 0}
+  TestIngredient: {fileID: 0}
 --- !u!114 &11417834
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -53,13 +55,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6c2a6cabfd43a14694cdb51740c9609, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CurrentInputMode: 1
+  maximumDragTime: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: CurrentInputMode
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 111366}
