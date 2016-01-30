@@ -17,7 +17,7 @@ public class Ingredient : MonoBehaviour
 
     private void Start()
     {
-        gameObject.AddComponent<BoxCollider2D>();
+        gameObject.AddComponent<PolygonCollider2D>();
     }
 
     private void Update()
