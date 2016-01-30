@@ -11,6 +11,7 @@ public class Main : MonoBehaviour
     public GameObject LevelCompletedWindowPrefab;
 
     private RecipeWindow _recipeWindow;
+    private LevelCompletedWindow _levelCompletedWindow;
 
     private int _selectedLevelNumber;
     private Game _currentGame;
@@ -32,11 +33,17 @@ public class Main : MonoBehaviour
 
         GameObject levelPrefab = Levels[_selectedLevelNumber];
         _currentGame.Create(levelPrefab);
+
+        _currentGame.End += HandleGameEnd;
     }
 
-    private void EndGame()
+    private void HandleGameEnd()
     {
-        //TODO: destroy current game
+        _currentGame.End -= HandleGameEnd;
+        Destroy(_currentGame.gameObject);
+        _currentGame = null;
+
+        OpenLevelCompletedWindow();
     }
 
     private T OpenWindow<T>(GameObject prefab) where T : GameWindow
@@ -52,7 +59,7 @@ public class Main : MonoBehaviour
         window = null;
     }
 
-    #region Recipe Screen
+    #region Recipe Window
 
     private void OpenRecipeWindow()
     {
@@ -81,6 +88,20 @@ public class Main : MonoBehaviour
     {
         CloseRecipeWindow();
         _currentGame.Begin();
+    }
+
+    #endregion
+
+    #region Level Completed Window
+
+    private void OpenLevelCompletedWindow()
+    {
+        _levelCompletedWindow = OpenWindow<LevelCompletedWindow>(LevelCompletedWindowPrefab);
+    }
+
+    private void CloseLevelCompletedWindow()
+    {
+        CloseWindow(ref _levelCompletedWindow);
     }
 
     #endregion

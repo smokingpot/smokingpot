@@ -9,6 +9,8 @@ public class Game : MonoBehaviour
 
     public SpawnPoint[] TestSpawnPoints;
 
+    public event Action End;
+
     private Level _level;
 	private Pot _pot;
 
@@ -16,6 +18,9 @@ public class Game : MonoBehaviour
     private Queue<Sprite> _ingredients;
     private Queue<float> _spawnTimeIntervals;
     private float _nextSpawnTime;
+
+    private bool _running;
+    private float _playTime;
 
     public void Create(GameObject levelPrefab)
     {
@@ -34,6 +39,16 @@ public class Game : MonoBehaviour
     {
         _pot.gameObject.SetActive(true);
         GenerateLevel();
+        _running = true;
+    }
+
+    private void OnEnd()
+    {
+        _running = false;
+        if (End != null)
+        {
+            End();
+        }
     }
 
     private void GenerateLevel()
@@ -118,10 +133,17 @@ public class Game : MonoBehaviour
 
     private void Update()
     {
-        if (_spawnTimeIntervals == null)
+        if (!_running)
         {
             return;
         }
+
+        _playTime += Time.deltaTime;
+        if (_playTime > _level.TimeLimit)
+        {
+            OnEnd();
+        }
+
         if (_spawnTimeIntervals.Count > 0 && Time.realtimeSinceStartup > _nextSpawnTime)
         {
             SpawnNewIngredient();
