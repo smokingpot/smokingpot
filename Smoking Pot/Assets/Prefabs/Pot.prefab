@@ -9,13 +9,14 @@ GameObject:
   m_Component:
   - 4: {fileID: 482108}
   - 61: {fileID: 6142304}
+  - 114: {fileID: 11444562}
   m_Layer: 0
   m_Name: InPotTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &102116
 GameObject:
   m_ObjectHideFlags: 0
@@ -190,6 +191,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11444562
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 101220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7820c0b37f8917a44a7aec4216fa7d29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11450898
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -207,7 +219,15 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 104298}
