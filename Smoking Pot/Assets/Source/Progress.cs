@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 public class Progress
 {
@@ -19,10 +20,11 @@ public class Progress
         _progress[ingredientName]++;
     }
 
-    public int GetResult(IEnumerable<Level.RecipeElement> recipe)
+    public int GetResult(Level.RecipeElement[] recipe)
     {
-        //TODO:
         int count = 0;
+        int good = 0;
+        int bad = 0;
         foreach (var elem in recipe)
         {
             count += elem.Amount;
@@ -30,7 +32,29 @@ public class Progress
             {
                 continue;
             }
+            int val = _progress[elem.Ingredient.name];
+            if (val > elem.Amount)
+            {
+                good += elem.Amount;
+                bad += (val - elem.Amount);
+            }
+            else
+            {
+                good += val;
+            }
         }
-        return 0;
+        if (count == 0)
+        {
+            return 0;
+        }
+        foreach (var collected in _progress)
+        {
+            if (!Array.Exists(recipe, elem => elem.Ingredient.name == collected.Key))
+            {
+                bad += collected.Value;
+            }
+        }
+        float result = Mathf.Max(good - bad, 0) / (float)count;
+        return (int)(result * 100.0f);
     }
 }
