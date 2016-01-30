@@ -94,8 +94,6 @@ public class InputHandler : MonoBehaviour
             Vector2 force = globalVector - mouseWorldPos;
             if (force.magnitude > maximumDragDistance)
             {
-                print(force.magnitude);
-                print(maximumDragDistance);
                 force = force * maximumDragDistance / force.magnitude;
             }
             _currentIngredient.AddForceAtPosition(force * forceConstant, globalVector);
