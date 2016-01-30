@@ -529,7 +529,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Levels:
-  - {fileID: 156412, guid: 85ed8b1dd03d7a242b54571ff32425f7, type: 2}
+  - {fileID: 131822, guid: f0dfd449e3dba064c9127636f44bb32e, type: 2}
   GamePrefab: {fileID: 111366, guid: 441f7babb7b1ad941a5db17aa627caf6, type: 2}
   UICanvas: {fileID: 1748199512}
   RecipeWindowPrefab: {fileID: 122290, guid: 741abbf055c2b5548845fd88e2525f8c, type: 2}
