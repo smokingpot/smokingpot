@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class Ingredient : MonoBehaviour
 {
+    public Rect GameArea; // for garbage collection
+    public float ForceFactor;
+
     private SpriteRenderer _renderer;
     private Rigidbody2D _rigidbody;
 
@@ -12,10 +15,23 @@ public class Ingredient : MonoBehaviour
         _rigidbody = gameObject.GetComponent<Rigidbody2D>();
     }
 
+    private void Update()
+    {
+        if (!GameArea.Contains(transform.position))
+        {
+            Destroy(gameObject);
+        }
+    }
+
     public void Init(SpawnPoint point, Sprite sprite)
     {
         _renderer.sprite = sprite;
         transform.position = point.transform.position;
         _rigidbody.velocity = point.MinVelocity;
+    }
+
+    public void AddForce(Vector2 force)
+    {
+        _rigidbody.AddForce(-1.0f*ForceFactor*force);
     }
 }

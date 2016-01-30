@@ -5,15 +5,7 @@ public class Game : MonoBehaviour
     public GameObject PotPrefab;
     public GameObject IngredientPrefab;
 
-    private Pot _pot;
     private LevelParameters _levelParameters;
-
-    private int _score;
-
-    public int Score
-    {
-        get { return _score; }
-    }
 
     public void Begin(LevelParameters levelParameters)
     {
@@ -25,7 +17,6 @@ public class Game : MonoBehaviour
     {
         GameObject potObj = Instantiate(PotPrefab);
         potObj.transform.SetParent(transform, false);
-        _pot = potObj.GetComponent<Pot>();
     }
 
     private void SpawnNewIngredient()

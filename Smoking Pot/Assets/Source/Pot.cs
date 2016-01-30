@@ -1,13 +1,5 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Pot : MonoBehaviour
 {
-	private void Start()
-	{
-	}
-
-	private void Update()
-	{
-	}
 }
