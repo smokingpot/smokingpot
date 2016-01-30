@@ -3,15 +3,9 @@ using UnityEngine;
 
 public class Main : MonoBehaviour
 {
-    [Serializable]
-    public class LevelParameters
-    {
-        public float Time;
-        public float Speed;
-        public SpawnPoint[] Points;
-    }
-
     public LevelParameters[] Levels;
+
+    public GameObject GamePrefab;
 
     public Canvas UICanvas;
 
@@ -20,13 +14,27 @@ public class Main : MonoBehaviour
 
     private RecipeWindow _recipeWindow;
 
+    private int _selectedLevelNumber;
+    private Game _currentGame;
+
     private void Start()
     {
+        _selectedLevelNumber = 0; //TODO: select from UI
         OpenRecipeWindow();
     }
 
-    private void LoadLevel(LevelParameters parameters)
+    private void LoadGame()
     {
+        GameObject gameObj = Instantiate(GamePrefab);
+        _currentGame = gameObj.GetComponent<Game>();
+
+        LevelParameters levelParameters = Levels[_selectedLevelNumber];
+        _currentGame.Begin(levelParameters);
+    }
+
+    private void EndGame()
+    {
+        //TODO: destroy current game
     }
 
     private T OpenWindow<T>(GameObject prefab) where T : GameWindow
@@ -69,6 +77,7 @@ public class Main : MonoBehaviour
     private void HandlePlayClick()
     {
         CloseRecipeWindow();
+        LoadGame();
     }
 
     #endregion
