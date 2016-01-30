@@ -3,14 +3,6 @@ using UnityEngine;
 
 public class InputHandler : MonoBehaviour
 {
-    public enum InputMode
-    {
-        Impulse,
-        Continuous
-    }
-
-    public InputMode CurrentInputMode;
-
     public float maximumDragTime = 1;
     public float maximumDragDistance = 2;
     public float forceConstant = 10;
@@ -20,51 +12,16 @@ public class InputHandler : MonoBehaviour
     private Ingredient _currentIngredient;
     private Vector2 _localHitPoint;
     private float _dragStartTime;
+    private int _touchLayerMask;
+
+    private void Awake()
+    {
+        _touchLayerMask = LayerMask.GetMask("Touch");
+    }
 
     private void Update()
     {
-        switch (CurrentInputMode)
-        {
-            case InputMode.Impulse:
-                ProcessImpulseInput();
-                break;
-            case InputMode.Continuous:
-                ProcessContinuousInput();
-                break;
-        }
-    }
-
-    private void ProcessImpulseInput()
-    {
-        if (Input.GetMouseButtonDown(ButtonNum))
-        {
-            Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.Raycast(mouseWorldPos, Vector2.zero);
-            if (hit.collider != null)
-            {
-                Ingredient ingredient = hit.collider.gameObject.GetComponent<Ingredient>();
-                if (ingredient != null)
-                {
-                    _localHitPoint = mouseWorldPos;
-                    _currentIngredient = ingredient;
-                }
-            }
-        }
-        if (_currentIngredient != null && Input.GetMouseButtonUp(ButtonNum))
-        {
-
-            Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector2 globalVector = _currentIngredient.transform.TransformPoint(_localHitPoint);
-            Vector2 force = globalVector - mouseWorldPos;
-            print(force.magnitude);
-            if (force.magnitude > maximumDragDistance)
-            {
-                force = force * maximumDragDistance / force.magnitude;
-            }
-            _currentIngredient.AddForceAtPosition(force, globalVector);
-            _currentIngredient = null;
-
-        }
+        ProcessContinuousInput();
     }
 
     private void ProcessContinuousInput()
@@ -72,10 +29,10 @@ public class InputHandler : MonoBehaviour
         if (Input.GetMouseButtonDown(ButtonNum))
         {
             Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.Raycast(mouseWorldPos, Vector2.zero);
+            RaycastHit2D hit = Physics2D.Raycast(mouseWorldPos, Vector2.zero, 100.0f, _touchLayerMask);
             if (hit.collider != null)
             {
-                Ingredient ingredient = hit.collider.gameObject.GetComponent<Ingredient>();
+                Ingredient ingredient = hit.collider.gameObject.GetComponentInParent<Ingredient>();
                 if (ingredient != null)
                 {
                     _currentIngredient = ingredient;
@@ -87,7 +44,9 @@ public class InputHandler : MonoBehaviour
             }
         }
 
-        if (Input.GetMouseButton(ButtonNum) && _currentIngredient != null && (Time.realtimeSinceStartup - _dragStartTime) < maximumDragTime)
+        if (Input.GetMouseButton(ButtonNum) 
+            && _currentIngredient != null 
+            && (Time.realtimeSinceStartup - _dragStartTime) < maximumDragTime)
         {
             Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector2 globalVector = _currentIngredient.transform.TransformPoint(_localHitPoint);
