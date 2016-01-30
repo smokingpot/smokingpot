@@ -3,12 +3,10 @@ using UnityEngine;
 
 public class Main : MonoBehaviour
 {
-    public LevelParameters[] Levels;
-
+    public GameObject[] Levels;
     public GameObject GamePrefab;
 
     public Canvas UICanvas;
-
     public GameObject RecipeWindowPrefab;
     public GameObject LevelCompletedWindowPrefab;
 
@@ -28,8 +26,8 @@ public class Main : MonoBehaviour
         GameObject gameObj = Instantiate(GamePrefab);
         _currentGame = gameObj.GetComponent<Game>();
 
-        LevelParameters levelParameters = Levels[_selectedLevelNumber];
-        _currentGame.Begin(levelParameters);
+        GameObject levelPrefab = Levels[_selectedLevelNumber];
+        _currentGame.Begin(levelPrefab);
     }
 
     private void EndGame()

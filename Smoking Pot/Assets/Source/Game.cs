@@ -7,11 +7,14 @@ public class Game : MonoBehaviour
 
     public SpawnPoint[] TestSpawnPoints;
 
-    private LevelParameters _levelParameters;
+    private Level _level;
 
-    public void Begin(LevelParameters levelParameters)
+    public void Begin(GameObject levelPrefab)
     {
-        _levelParameters = levelParameters;
+        GameObject levelObj = Instantiate(levelPrefab);
+        levelObj.transform.SetParent(transform, false);
+        _level = levelObj.GetComponent<Level>();
+
         SpawnNewIngredient(); // for test
     }
 
@@ -28,11 +31,12 @@ public class Game : MonoBehaviour
 
     private void SpawnNewIngredient()
     {
-        int pointNum = Random.Range(0, _levelParameters.Points.Length);
-        SpawnPoint point = _levelParameters.Points[pointNum];
+        SpawnPoint[] points = _level.SpawnPoints;
+        int pointNum = Random.Range(0, points.Length);
+        SpawnPoint point = points[pointNum];
 
-        int spriteNum = Random.Range(0, _levelParameters.Ingredients.Length);
-        Sprite sprite = _levelParameters.Ingredients[spriteNum];
+        int spriteNum = Random.Range(0, _level.Ingredients.Length);
+        Sprite sprite = _level.Ingredients[spriteNum];
 
         GameObject ingredientObj = Instantiate(IngredientPrefab);
         ingredientObj.transform.SetParent(transform, false);
