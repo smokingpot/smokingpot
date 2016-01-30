@@ -16,6 +16,13 @@ public class Main : MonoBehaviour
     private int _selectedLevelNumber;
     private Game _currentGame;
 
+	private AudioManager _audioManager;
+
+	private void Awake()
+	{
+		_audioManager = AudioManager.Instance;
+	}
+
     private void Start()
     {
         Application.targetFrameRate = 60;
@@ -24,6 +31,8 @@ public class Main : MonoBehaviour
         LoadGame();
 
         OpenRecipeWindow();
+		_audioManager.playMenuMusic ();
+
     }
 
     private void LoadGame()
@@ -88,6 +97,7 @@ public class Main : MonoBehaviour
     {
         CloseRecipeWindow();
         _currentGame.Begin();
+		_audioManager.playGameMusic ();
     }
 
     #endregion

@@ -22,6 +22,8 @@ public class Game : MonoBehaviour
     private bool _running;
     private float _playTime;
 
+	private AudioManager _audioManager;
+
     public void Create(GameObject levelPrefab)
     {
         GameObject levelObj = Instantiate(levelPrefab);
@@ -98,6 +100,7 @@ public class Game : MonoBehaviour
     }
 
 	private void HandleCaught(Ingredient ingredient) {
+		_audioManager.playSplashSound ();
 		if (!_collectedIngredients.ContainsKey(ingredient.Name)) {
 			_collectedIngredients[ingredient.Name] = 0;
 		}
@@ -108,6 +111,7 @@ public class Game : MonoBehaviour
 	private void Awake()
 	{
 		_collectedIngredients = new Dictionary<string, int> ();
+		_audioManager = AudioManager.Instance;
 	}
 
     private void Start()
