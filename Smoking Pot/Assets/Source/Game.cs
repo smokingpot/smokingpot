@@ -14,7 +14,6 @@ public class Game : MonoBehaviour
     private Level _level;
 	private Pot _pot;
 
-	private Dictionary<string, int> _collectedIngredients;
     private Queue<Sprite> _ingredients;
     private Queue<float> _spawnTimeIntervals;
     private float _nextSpawnTime;
@@ -25,6 +24,7 @@ public class Game : MonoBehaviour
     public void Create(Level level)
     {
         _level = level;
+        _level.Play();
     }
 
     public Level CurrentLevel
@@ -97,19 +97,12 @@ public class Game : MonoBehaviour
         }
     }
 
-	private void HandleCaught(Ingredient ingredient) {
-		AudioManager.Instance.playSplashSound ();
-		if (!_collectedIngredients.ContainsKey(ingredient.Name)) {
-			_collectedIngredients[ingredient.Name] = 0;
-		}
-		_collectedIngredients [ingredient.Name]++;
-		Destroy (ingredient.gameObject);
-	}
-		
-	private void Awake()
-	{
-		_collectedIngredients = new Dictionary<string, int> ();
-	}
+    private void HandleCaught(Ingredient ingredient)
+    {
+        AudioManager.Instance.playSplashSound();
+        CurrentLevel.PlayerProgress.Add(ingredient.IngredientName);
+        Destroy(ingredient.gameObject);
+    }
 
     private void Start()
     {
@@ -128,9 +121,10 @@ public class Game : MonoBehaviour
         }
     }
 
-	private void OnDestroy() {
-		_pot.IngredientCaught -= HandleCaught;
-	}
+    private void OnDestroy()
+    {
+        _pot.IngredientCaught -= HandleCaught;
+    }
 
     private void Update()
     {

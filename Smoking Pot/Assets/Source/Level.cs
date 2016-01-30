@@ -31,6 +31,12 @@ public class Level : MonoBehaviour
     public int IngredientsCount;
 
     private int _number;
+    private Progress _progress = new Progress();
+
+    public Progress PlayerProgress
+    {
+        get { return _progress; }
+    }
 
     public SpawnPoint[] SpawnPoints
     {
@@ -47,6 +53,11 @@ public class Level : MonoBehaviour
     public void Init(int number)
     {
         _number = number;
+    }
+
+    public void Play()
+    {
+        _progress.Reset();
         foreach (var elem in Recipe)
         {
             elem.GenerateAmount();
@@ -56,5 +67,10 @@ public class Level : MonoBehaviour
     public int Number
     {
         get { return _number; }
+    }
+
+    public int GetResult()
+    {
+        return _progress.GetResult(Recipe);
     }
 }
