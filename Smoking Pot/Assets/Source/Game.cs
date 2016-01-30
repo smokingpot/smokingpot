@@ -10,6 +10,7 @@ public class Game : MonoBehaviour
     public SpawnPoint[] TestSpawnPoints;
 
     private Level _level;
+	private Pot _pot;
 
     private Queue<Sprite> _ingredients;
     private Queue<float> _spawnTimeIntervals;
@@ -69,10 +70,17 @@ public class Game : MonoBehaviour
         _nextSpawnTime = Time.realtimeSinceStartup + _spawnTimeIntervals.Dequeue();
     }
 
+	private void HandleCaught(Ingredient ingredient) {
+		Destroy (ingredient.gameObject);
+	}
+		
+
     private void Start()
     {
         GameObject potObj = Instantiate(PotPrefab);
         potObj.transform.SetParent(transform, false);
+		_pot = potObj.GetComponent<Pot> ();
+		_pot.IngredientCaught += HandleCaught;
 
         foreach (var point in TestSpawnPoints)
         {
@@ -82,6 +90,10 @@ public class Game : MonoBehaviour
             }
         }
     }
+
+	private void OnDestroy() {
+		_pot.IngredientCaught -= HandleCaught;
+	}
 
     private void Update()
     {
