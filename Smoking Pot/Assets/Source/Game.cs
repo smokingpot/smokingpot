@@ -76,12 +76,19 @@ public class Game : MonoBehaviour
 
         foreach (var point in TestSpawnPoints)
         {
-            point.SpawnTestIngredient();
+            if (point != null)
+            {
+                point.SpawnTestIngredient();
+            }
         }
     }
 
     private void Update()
     {
+        if (_spawnTimeIntervals == null)
+        {
+            return;
+        }
         if (_spawnTimeIntervals.Count > 0 && Time.realtimeSinceStartup > _nextSpawnTime)
         {
             SpawnNewIngredient();
