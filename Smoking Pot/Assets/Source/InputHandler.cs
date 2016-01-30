@@ -35,6 +35,10 @@ public class InputHandler : MonoBehaviour
                 Ingredient ingredient = hit.collider.gameObject.GetComponentInParent<Ingredient>();
                 if (ingredient != null)
                 {
+					ParticleSystem particleSystem = ingredient.GetComponentInChildren<ParticleSystem> ();
+					ParticleSystem.EmissionModule emissionModule = particleSystem.emission;
+					emissionModule.enabled = true;
+
                     _currentIngredient = ingredient;
                     _dragStartTime = Time.realtimeSinceStartup;
 
@@ -43,6 +47,12 @@ public class InputHandler : MonoBehaviour
                 }
             }
         }
+
+		if (Input.GetMouseButtonUp (ButtonNum)) {
+			ParticleSystem particleSystem = _currentIngredient.GetComponentInChildren<ParticleSystem> ();
+			ParticleSystem.EmissionModule emissionModule = particleSystem.emission;
+			emissionModule.enabled = false;
+		}
 
         if (Input.GetMouseButton(ButtonNum) 
             && _currentIngredient != null 
