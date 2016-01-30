@@ -82,7 +82,7 @@ public class Game : MonoBehaviour
         float[] spawnTimes = new float[_level.IngredientsCount];
         for (int i = 0; i < spawnTimes.Length; i++)
         {
-            spawnTimes[i] = UnityEngine.Random.Range(0.0f, _level.TimeLimit);
+            spawnTimes[i] = UnityEngine.Random.Range(0.0f, _level.TimeLimit - _level.LastIngredientTime);
         }
         Array.Sort(spawnTimes);
 
@@ -92,9 +92,12 @@ public class Game : MonoBehaviour
         {
             float interval = spawnTimes[i] - prevTime;
             _spawnTimeIntervals.Enqueue(interval);
+            prevTime = spawnTimes[i];
         }
-
-        _nextSpawnTime = Time.realtimeSinceStartup + _spawnTimeIntervals.Dequeue();
+        if (_spawnTimeIntervals.Count > 0)
+        {
+            _nextSpawnTime = Time.realtimeSinceStartup + _spawnTimeIntervals.Dequeue();
+        }
     }
 
 	private void HandleCaught(Ingredient ingredient) {
@@ -144,19 +147,18 @@ public class Game : MonoBehaviour
             OnEnd();
         }
 
-        if (_spawnTimeIntervals.Count > 0 && Time.realtimeSinceStartup > _nextSpawnTime)
+        if (_ingredients.Count > 0 && Time.realtimeSinceStartup > _nextSpawnTime)
         {
             SpawnNewIngredient();
-            _nextSpawnTime = Time.realtimeSinceStartup + _spawnTimeIntervals.Dequeue();
+            if (_spawnTimeIntervals.Count > 0)
+            {
+                _nextSpawnTime = Time.realtimeSinceStartup + _spawnTimeIntervals.Dequeue();
+            }
         }
     }
 
     private void SpawnNewIngredient()
     {
-        if (_ingredients.Count == 0)
-        {
-            return;
-        }
         Sprite sprite = _ingredients.Dequeue();
         SpawnPoint point = _level.GetRandomSpawnPoint();
 
