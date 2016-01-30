@@ -15,6 +15,11 @@ public class Ingredient : MonoBehaviour
         _rigidbody = gameObject.GetComponent<Rigidbody2D>();
     }
 
+    private void Start()
+    {
+        gameObject.AddComponent<PolygonCollider2D>();
+    }
+
     private void Update()
     {
         if (!GameArea.Contains(transform.position))
@@ -33,15 +38,16 @@ public class Ingredient : MonoBehaviour
     public void Init(SpawnPoint point)
     {
         _rigidbody.velocity = point.MinVelocity;
+        _rigidbody.angularVelocity = point.AngularSpeed;
     }
 
     public void AddForce(Vector2 force)
     {
-        _rigidbody.AddForce(-1.0f*ForceFactor*force);
+        _rigidbody.AddForce(-1.0f * ForceFactor * force);
     }
 
-	public void AddForceAtPosition(Vector2 force, Vector2 position)
-	{
-		_rigidbody.AddForceAtPosition(-1.0f*ForceFactor*force, position);
-	}
+    public void AddForceAtPosition(Vector2 force, Vector2 position)
+    {
+        _rigidbody.AddForceAtPosition(-1.0f * ForceFactor * force, position);
+    }
 }

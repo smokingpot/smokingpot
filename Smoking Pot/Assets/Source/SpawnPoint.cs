@@ -4,12 +4,20 @@ using UnityEngine;
 public class SpawnPoint : MonoBehaviour
 {
     public Vector2 MinVelocity;
+    public float AngularSpeed;
 
     //TODO: random speed and angle
+
+    public Ingredient TestIngredient;
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
         Gizmos.DrawRay(transform.position, MinVelocity);
+    }
+
+    public void SpawnTestIngredient()
+    {
+        TestIngredient.Init(this);
     }
 }
