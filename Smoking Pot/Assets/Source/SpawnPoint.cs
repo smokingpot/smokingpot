@@ -38,7 +38,7 @@ public class SpawnPoint : MonoBehaviour
     public Vector2 GetRandomVelocity()
     {
         float speed = UnityEngine.Random.Range(SpeedMin, SpeedMax);
-        float angle = UnityEngine.Random.Range(0.0f, RandomAngle);
+        float angle = UnityEngine.Random.Range(-RandomAngle * 0.5f, RandomAngle * 0.5f);
         return Quaternion.AngleAxis(angle, Vector3.forward) 
             * transform.right.normalized * speed;
     }
