@@ -12,7 +12,8 @@ public class InputHandler : MonoBehaviour
     public InputMode CurrentInputMode;
 
     public float maximumDragTime = 1;
-    public float maximumDragDistance;
+    public float maximumDragDistance = 2;
+    public float forceConstant = 10;
 
     private const int ButtonNum = 0;
 
@@ -51,10 +52,18 @@ public class InputHandler : MonoBehaviour
         }
         if (_currentIngredient != null && Input.GetMouseButtonUp(ButtonNum))
         {
+
             Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector2 offset = _localHitPoint - mouseWorldPos;
-            _currentIngredient.AddForce(offset);
+            Vector2 globalVector = _currentIngredient.transform.TransformPoint(_localHitPoint);
+            Vector2 force = globalVector - mouseWorldPos;
+            print(force.magnitude);
+            if (force.magnitude > maximumDragDistance)
+            {
+                force = force * maximumDragDistance / force.magnitude;
+            }
+            _currentIngredient.AddForceAtPosition(force, globalVector);
             _currentIngredient = null;
+
         }
     }
 
@@ -83,8 +92,13 @@ public class InputHandler : MonoBehaviour
             Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector2 globalVector = _currentIngredient.transform.TransformPoint(_localHitPoint);
             Vector2 force = globalVector - mouseWorldPos;
-            force = force * maximumDragDistance / Math.Max(force.magnitude, maximumDragDistance);
-            _currentIngredient.AddForceAtPosition(force, globalVector);
+            if (force.magnitude > maximumDragDistance)
+            {
+                print(force.magnitude);
+                print(maximumDragDistance);
+                force = force * maximumDragDistance / force.magnitude;
+            }
+            _currentIngredient.AddForceAtPosition(force * forceConstant, globalVector);
         }
     }
 }
