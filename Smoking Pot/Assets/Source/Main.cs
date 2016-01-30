@@ -17,6 +17,7 @@ public class Main : MonoBehaviour
 
     private void Start()
     {
+        Application.targetFrameRate = 60;
         _selectedLevelNumber = 0; //TODO: select from UI
         OpenRecipeWindow();
     }

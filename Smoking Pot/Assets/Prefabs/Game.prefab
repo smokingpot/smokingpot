@@ -42,7 +42,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PotPrefab: {fileID: 104298, guid: d7ce50c9c6b9439448d400088d3712cf, type: 2}
   IngredientPrefab: {fileID: 102784, guid: 39033a526706e11418f42a7720b0c63e, type: 2}
-  TestSpawnPoints: []
+  TestSpawnPoints:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &11417834
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -55,8 +57,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentInputMode: 1
-  maximumDragTime: 1
-  maximumDragDistance: 100
+  maximumDragTime: 0.2
+  maximumDragDistance: 2
+  forceConstant: 50
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
