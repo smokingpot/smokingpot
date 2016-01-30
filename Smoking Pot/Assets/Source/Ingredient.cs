@@ -34,4 +34,9 @@ public class Ingredient : MonoBehaviour
     {
         _rigidbody.AddForce(-1.0f*ForceFactor*force);
     }
+
+	public void AddForceAtPosition(Vector2 force, Vector2 position)
+	{
+		_rigidbody.AddForceAtPosition(-1.0f*ForceFactor*force, position);
+	}
 }
