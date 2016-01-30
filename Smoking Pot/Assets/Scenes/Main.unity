@@ -580,6 +580,8 @@ MonoBehaviour:
   - {fileID: 192762, guid: 41947d5e9f8540c4a9572020aa39f636, type: 2}
   GamePrefab: {fileID: 111366, guid: 441f7babb7b1ad941a5db17aa627caf6, type: 2}
   UICanvas: {fileID: 1748199512}
+  LevelSelectionWindowPrefab: {fileID: 173980, guid: 76017d42f6ff3864ca3e53689c272fa7,
+    type: 2}
   RecipeWindowPrefab: {fileID: 122290, guid: 741abbf055c2b5548845fd88e2525f8c, type: 2}
   LevelCompletedWindowPrefab: {fileID: 108560, guid: 4a2de48e291348e489e4d95edbff95cd,
     type: 2}
