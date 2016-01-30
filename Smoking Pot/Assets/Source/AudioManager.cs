@@ -5,16 +5,17 @@ public class AudioManager : MonoBehaviour {
 
 	private static AudioManager _instance;
 
-	private AudioSource backgroundAudio;
+	public AudioSource backgroundAudio;
 	public AudioSource potAudio;
+	public AudioSource gameAudio;
 
 	public AudioClip music;
 	public AudioClip backgroundSounds;
 	public AudioClip splashSound;
+	public AudioClip pushSound;
 
 	// Use this for initialization
 	private void Awake () {
-		backgroundAudio = GetComponent<AudioSource> ();
 		_instance = this;
 	}
 
@@ -34,6 +35,11 @@ public class AudioManager : MonoBehaviour {
 		backgroundAudio.Stop ();
 		backgroundAudio.clip = backgroundSounds;
 		backgroundAudio.Play ();
+	}
+
+	public void playPushSound() {
+		gameAudio.clip = pushSound;
+		gameAudio.Play ();
 	}
 
 	public void playSplashSound() {
