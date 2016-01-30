@@ -36,6 +36,7 @@ public class Main : MonoBehaviour
             Level level = levelObj.GetComponent<Level>();
             level.Init(num);
             _levelInstances.Add(level);
+            level.gameObject.SetActive(false);
         }
 
         OpenLevelSelectionWindow();
@@ -48,6 +49,7 @@ public class Main : MonoBehaviour
         _currentGame = gameObj.GetComponent<Game>();
 
         Level level = _levelInstances[_selectedLevelNumber];
+        level.gameObject.SetActive(true);
         _currentGame.Create(level);
 
         _currentGame.End += HandleGameEnd;
@@ -55,11 +57,18 @@ public class Main : MonoBehaviour
 
     private void HandleGameEnd()
     {
+        _currentGame.CurrentLevel.gameObject.SetActive(false);
         _currentGame.End -= HandleGameEnd;
         Destroy(_currentGame.gameObject);
         _currentGame = null;
 
         OpenLevelCompletedWindow();
+    }
+
+    private void StartSelectedGame()
+    {
+        LoadGame();
+        OpenRecipeWindow();
     }
 
     private T OpenWindow<T>(GameObject prefab) where T : GameWindow
@@ -114,11 +123,27 @@ public class Main : MonoBehaviour
     private void OpenLevelCompletedWindow()
     {
         _levelCompletedWindow = OpenWindow<LevelCompletedWindow>(LevelCompletedWindowPrefab);
+        _levelCompletedWindow.ReplayClick += HandleRaplayClick;
+        _levelCompletedWindow.ExitClick += HandleExitClick;
     }
 
     private void CloseLevelCompletedWindow()
     {
+        _levelCompletedWindow.ReplayClick -= HandleRaplayClick;
+        _levelCompletedWindow.ExitClick -= HandleExitClick;
         CloseWindow(ref _levelCompletedWindow);
+    }
+
+    private void HandleRaplayClick()
+    {
+        CloseLevelCompletedWindow();
+        StartSelectedGame();
+    }
+
+    private void HandleExitClick()
+    {
+        CloseLevelCompletedWindow();
+        OpenLevelSelectionWindow();
     }
 
     #endregion
@@ -142,9 +167,7 @@ public class Main : MonoBehaviour
     {
         _selectedLevelNumber = levelNumber;
         CloseLevelSelectionWindow();
-
-        LoadGame();
-        OpenRecipeWindow();
+        StartSelectedGame();
     }
 
     #endregion
