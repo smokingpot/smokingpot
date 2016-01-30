@@ -17,11 +17,21 @@ public class Game : MonoBehaviour
     private Queue<float> _spawnTimeIntervals;
     private float _nextSpawnTime;
 
-    public void Begin(GameObject levelPrefab)
+    public void Create(GameObject levelPrefab)
     {
         GameObject levelObj = Instantiate(levelPrefab);
         levelObj.transform.SetParent(transform, false);
         _level = levelObj.GetComponent<Level>();
+    }
+
+    public Level CurrentLevel
+    {
+        get { return _level; }
+    }
+
+    public void Begin()
+    {
+        _pot.gameObject.SetActive(true);
         GenerateLevel();
     }
 
@@ -88,8 +98,9 @@ public class Game : MonoBehaviour
     {
         GameObject potObj = Instantiate(PotPrefab);
         potObj.transform.SetParent(transform, false);
-		_pot = potObj.GetComponent<Pot> ();
-		_pot.IngredientCaught += HandleCaught;
+        _pot = potObj.GetComponent<Pot>();
+        _pot.gameObject.SetActive(false);
+        _pot.IngredientCaught += HandleCaught;
 
         foreach (var point in TestSpawnPoints)
         {
