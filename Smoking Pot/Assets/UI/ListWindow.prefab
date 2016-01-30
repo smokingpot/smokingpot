@@ -10,6 +10,7 @@ GameObject:
   - 224: {fileID: 22464690}
   - 222: {fileID: 22225390}
   - 114: {fileID: 11436268}
+  - 114: {fileID: 11405362}
   m_Layer: 5
   m_Name: ListWindow
   m_TagString: Untagged
@@ -90,6 +91,17 @@ MonoBehaviour:
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 0
+--- !u!114 &11405362
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 122290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01377000363b9d64caa549030163472f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11407294
 MonoBehaviour:
   m_ObjectHideFlags: 1

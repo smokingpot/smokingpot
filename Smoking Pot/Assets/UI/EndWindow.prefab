@@ -46,6 +46,7 @@ GameObject:
   - 224: {fileID: 22498494}
   - 222: {fileID: 22244122}
   - 114: {fileID: 11486596}
+  - 114: {fileID: 11439016}
   m_Layer: 5
   m_Name: EndWindow
   m_TagString: Untagged
@@ -205,6 +206,17 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Levels
+--- !u!114 &11439016
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 108560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2a1c33d5722f504f807dd9c8eab5d71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11441678
 MonoBehaviour:
   m_ObjectHideFlags: 1
