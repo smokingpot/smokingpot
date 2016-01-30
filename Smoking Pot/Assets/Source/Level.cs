@@ -19,7 +19,7 @@ public class Level : MonoBehaviour
 
         public void GenerateAmount()
         {
-            _amount = UnityEngine.Random.Range(AmountMin, AmountMax);
+            _amount = UnityEngine.Random.Range(AmountMin, AmountMax + 1);
         }
     }
 
