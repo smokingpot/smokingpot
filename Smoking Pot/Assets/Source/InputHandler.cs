@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class InputHandler : MonoBehaviour
 {
-	public float maximumDragTime = 1;
+	public float maximumDragTime;
+    public float maximumDragDistance;
 
     private const int ButtonNum = 0;
 
@@ -55,12 +56,14 @@ public class InputHandler : MonoBehaviour
                 }
             }
         }
-			
+
+
 		if (Input.GetMouseButton (ButtonNum) && _currentIngredient != null && (Time.realtimeSinceStartup - _dragStartTime) < maximumDragTime) {
 			Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-			Vector2 force = (Vector2)_currentIngredient.transform.position - mouseWorldPos;
 			Vector2 globalVector = _currentIngredient.transform.TransformPoint (_localHitPoint);
-			_currentIngredient.AddForceAtPosition(force, globalVector);
+            Vector2 force = globalVector - mouseWorldPos;
+            force = force * maximumDragDistance / Math.Max(force.magnitude, maximumDragDistance);
+            _currentIngredient.AddForceAtPosition(force, globalVector);
 		}
 	}
 
