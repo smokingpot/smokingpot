@@ -956,9 +956,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Levels:
+  - {fileID: 131822, guid: f0dfd449e3dba064c9127636f44bb32e, type: 2}
   - {fileID: 192762, guid: 41947d5e9f8540c4a9572020aa39f636, type: 2}
+  - {fileID: 166252, guid: f0f7f6e32e425594f80d5f3e0cbb9dc5, type: 2}
+  - {fileID: 145318, guid: d4c871e427a42324d999040469dcb86d, type: 2}
+  - {fileID: 138782, guid: 01cec7160c65b5640adbaf4a67e92d17, type: 2}
+  - {fileID: 174654, guid: 725345ace3c7a2b44a6a8823bce3447a, type: 2}
+  - {fileID: 186318, guid: 46580ef77440f1242ae66b44992e2961, type: 2}
   GamePrefab: {fileID: 111366, guid: 441f7babb7b1ad941a5db17aa627caf6, type: 2}
   UICanvas: {fileID: 1748199512}
+  LevelSelectionWindowPrefab: {fileID: 173980, guid: 76017d42f6ff3864ca3e53689c272fa7,
+    type: 2}
   RecipeWindowPrefab: {fileID: 122290, guid: 741abbf055c2b5548845fd88e2525f8c, type: 2}
   LevelCompletedWindowPrefab: {fileID: 108560, guid: 4a2de48e291348e489e4d95edbff95cd,
     type: 2}

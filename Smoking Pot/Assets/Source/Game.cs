@@ -22,12 +22,9 @@ public class Game : MonoBehaviour
     private bool _running;
     private float _playTime;
 
-    public void Create(GameObject levelPrefab)
+    public void Create(Level level)
     {
-        GameObject levelObj = Instantiate(levelPrefab);
-        levelObj.transform.SetParent(transform, false);
-        _level = levelObj.GetComponent<Level>();
-        _level.Init();
+        _level = level;
     }
 
     public Level CurrentLevel

@@ -64,6 +64,7 @@ GameObject:
   - 224: {fileID: 22414356}
   - 222: {fileID: 22209184}
   - 114: {fileID: 11430286}
+  - 114: {fileID: 11463236}
   m_Layer: 5
   m_Name: LevelWindow
   m_TagString: Untagged
@@ -192,6 +193,19 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.ScrollRect+ScrollRectEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &11463236
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 173980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f54461ac750b094d8ae1a34e6f1e51a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelEntryPrefab: {fileID: 163036, guid: 47510a1b5082b6f44b344661d4d4bf72, type: 2}
+  Container: {fileID: 22478872}
 --- !u!114 &11474788
 MonoBehaviour:
   m_ObjectHideFlags: 1
