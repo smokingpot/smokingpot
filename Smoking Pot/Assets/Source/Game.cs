@@ -12,6 +12,7 @@ public class Game : MonoBehaviour
     private Level _level;
 	private Pot _pot;
 
+	private Dictionary<string, int> _collectedIngredients;
     private Queue<Sprite> _ingredients;
     private Queue<float> _spawnTimeIntervals;
     private float _nextSpawnTime;
@@ -71,9 +72,17 @@ public class Game : MonoBehaviour
     }
 
 	private void HandleCaught(Ingredient ingredient) {
+		if (!_collectedIngredients.ContainsKey(ingredient.Name)) {
+			_collectedIngredients[ingredient.Name] = 0;
+		}
+		_collectedIngredients [ingredient.Name]++;
 		Destroy (ingredient.gameObject);
 	}
 		
+	private void Awake()
+	{
+		_collectedIngredients = new Dictionary<string, int> ();
+	}
 
     private void Start()
     {
