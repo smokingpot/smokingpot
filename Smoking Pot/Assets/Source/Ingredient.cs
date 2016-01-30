@@ -15,6 +15,11 @@ public class Ingredient : MonoBehaviour
         _rigidbody = gameObject.GetComponent<Rigidbody2D>();
     }
 
+    private void Start()
+    {
+        gameObject.AddComponent<BoxCollider2D>();
+    }
+
     private void Update()
     {
         if (!GameArea.Contains(transform.position))
@@ -33,6 +38,7 @@ public class Ingredient : MonoBehaviour
     public void Init(SpawnPoint point)
     {
         _rigidbody.velocity = point.MinVelocity;
+        _rigidbody.angularVelocity = point.AngularSpeed;
     }
 
     public void AddForce(Vector2 force)

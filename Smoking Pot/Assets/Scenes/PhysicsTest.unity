@@ -339,7 +339,7 @@ Prefab:
       objectReference: {fileID: 1326945515}
     - target: {fileID: 11417834, guid: 441f7babb7b1ad941a5db17aa627caf6, type: 2}
       propertyPath: CurrentInputMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11404760, guid: 441f7babb7b1ad941a5db17aa627caf6, type: 2}
       propertyPath: TestSpawnPoints.Array.data[0]

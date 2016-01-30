@@ -4,6 +4,7 @@ using UnityEngine;
 public class SpawnPoint : MonoBehaviour
 {
     public Vector2 MinVelocity;
+    public float AngularSpeed;
 
     //TODO: random speed and angle
 
