@@ -5,8 +5,7 @@ public class Game : MonoBehaviour
     public GameObject PotPrefab;
     public GameObject IngredientPrefab;
 
-    public SpawnPoint TestSpawnPoint;
-    public Ingredient TestIngredient;
+    public SpawnPoint[] TestSpawnPoints;
 
     private LevelParameters _levelParameters;
 
@@ -21,9 +20,9 @@ public class Game : MonoBehaviour
         GameObject potObj = Instantiate(PotPrefab);
         potObj.transform.SetParent(transform, false);
 
-        if (TestIngredient != null && TestSpawnPoint != null)
+        foreach (var point in TestSpawnPoints)
         {
-            SpawnTestIngredient();
+            point.SpawnTestIngredient();
         }
     }
 
@@ -39,10 +38,5 @@ public class Game : MonoBehaviour
         ingredientObj.transform.SetParent(transform, false);
         Ingredient ingredient = ingredientObj.GetComponent<Ingredient>();
         ingredient.Init(point, sprite);
-    }
-
-    private void SpawnTestIngredient()
-    {
-        TestIngredient.Init(TestSpawnPoint);
     }
 }

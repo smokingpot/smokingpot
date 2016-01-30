@@ -3,41 +3,62 @@ using UnityEngine;
 
 public class InputHandler : MonoBehaviour
 {
-	public float maximumDragTime = 1;
+    public enum InputMode
+    {
+        Impulse,
+        Continuous
+    }
+
+    public InputMode CurrentInputMode;
+
+    public float maximumDragTime = 1;
 
     private const int ButtonNum = 0;
 
     private Ingredient _currentIngredient;
     private Vector2 _localHitPoint;
-	private float _dragStartTime;
+    private float _dragStartTime;
 
-//    private void Update()
-//    {
-//        if (Input.GetMouseButtonDown(ButtonNum))
-//        {
-//            Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-//            RaycastHit2D hit = Physics2D.Raycast(mouseWorldPos, Vector2.zero);
-//            if (hit.collider != null)
-//            {
-//                Ingredient ingredient = hit.collider.gameObject.GetComponent<Ingredient>();
-//                if (ingredient != null)
-//                {
-//                    _hitPoint = mouseWorldPos;
-//                    _currentIngredient = ingredient;
-//                }
-//            }
-//        }
-//        if (_currentIngredient != null && Input.GetMouseButtonUp(ButtonNum))
-//        {
-//            Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-//            Vector2 offset = _hitPoint - mouseWorldPos;
-//            _currentIngredient.AddForce(offset);
-//            _currentIngredient = null;
-//        }
-//    }
+    private void Update()
+    {
+        switch (CurrentInputMode)
+        {
+            case InputMode.Impulse:
+                ProcessImpulseInput();
+                break;
+            case InputMode.Continuous:
+                ProcessContinuousInput();
+                break;
+        }
+    }
 
-	private void Update()
-	{
+    private void ProcessImpulseInput()
+    {
+        if (Input.GetMouseButtonDown(ButtonNum))
+        {
+            Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            RaycastHit2D hit = Physics2D.Raycast(mouseWorldPos, Vector2.zero);
+            if (hit.collider != null)
+            {
+                Ingredient ingredient = hit.collider.gameObject.GetComponent<Ingredient>();
+                if (ingredient != null)
+                {
+                    _localHitPoint = mouseWorldPos;
+                    _currentIngredient = ingredient;
+                }
+            }
+        }
+        if (_currentIngredient != null && Input.GetMouseButtonUp(ButtonNum))
+        {
+            Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 offset = _localHitPoint - mouseWorldPos;
+            _currentIngredient.AddForce(offset);
+            _currentIngredient = null;
+        }
+    }
+
+    private void ProcessContinuousInput()
+    {
         if (Input.GetMouseButtonDown(ButtonNum))
         {
             Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -48,20 +69,20 @@ public class InputHandler : MonoBehaviour
                 if (ingredient != null)
                 {
                     _currentIngredient = ingredient;
-					_dragStartTime = Time.realtimeSinceStartup;
+                    _dragStartTime = Time.realtimeSinceStartup;
 
-					_localHitPoint = ingredient.transform.InverseTransformPoint(hit.point);
+                    _localHitPoint = ingredient.transform.InverseTransformPoint(hit.point);
 
                 }
             }
         }
-			
-		if (Input.GetMouseButton (ButtonNum) && _currentIngredient != null && (Time.realtimeSinceStartup - _dragStartTime) < maximumDragTime) {
-			Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-			Vector2 force = (Vector2)_currentIngredient.transform.position - mouseWorldPos;
-			Vector2 globalVector = _currentIngredient.transform.TransformPoint (_localHitPoint);
-			_currentIngredient.AddForceAtPosition(force, globalVector);
-		}
-	}
 
+        if (Input.GetMouseButton(ButtonNum) && _currentIngredient != null && (Time.realtimeSinceStartup - _dragStartTime) < maximumDragTime)
+        {
+            Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 force = (Vector2)_currentIngredient.transform.position - mouseWorldPos;
+            Vector2 globalVector = _currentIngredient.transform.TransformPoint(_localHitPoint);
+            _currentIngredient.AddForceAtPosition(force, globalVector);
+        }
+    }
 }
