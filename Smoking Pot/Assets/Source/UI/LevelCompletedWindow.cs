@@ -17,5 +17,9 @@ public class LevelCompletedWindow : GameWindow
 
     public void OnExitClick()
     {
+        if (ExitClick != null)
+        {
+            ExitClick();
+        }
     }
 }
