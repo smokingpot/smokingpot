@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MinVelocity: {x: 1, y: 0.5}
-  AngularSpeed: 0
+  AngularSpeed: 30
   TestIngredient: {fileID: 0}
 --- !u!114 &11477872
 MonoBehaviour:
@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MinVelocity: {x: -2, y: 0.5}
-  AngularSpeed: 0
+  AngularSpeed: -60
   TestIngredient: {fileID: 0}
 --- !u!114 &11480316
 MonoBehaviour:
@@ -125,8 +125,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7badc324ceb3b304d822f63826eb909b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Ingredients:
-  - {fileID: 21300000, guid: a1ebfb4c1e5175f47acc7f5e94d3b83e, type: 3}
+  Recipe:
+  - Ingredient: {fileID: 21300000, guid: 00d8bfa925595604c85bf6a3c5cd8da2, type: 3}
+    Amount: 3
+  - Ingredient: {fileID: 21300000, guid: 3663a5ddd446a804d97ad5919697c413, type: 3}
+    Amount: 1
+  - Ingredient: {fileID: 21300000, guid: 1a5d76d1a94eb4b4fb2b32ff309b4445, type: 3}
+    Amount: 2
+  OtherIngredients:
+  - {fileID: 21300000, guid: 6296cd3c582831e4aa29a783322e8fed, type: 3}
+  - {fileID: 21300000, guid: 385b3bc86180a4d48bd3d1c772eb0d90, type: 3}
+  - {fileID: 21300000, guid: 980562c7e38c511428b566319d2835af, type: 3}
+  - {fileID: 21300000, guid: ca054d65b28ea5243b240de66ad4a230, type: 3}
+  - {fileID: 21300000, guid: c5a5a9d219c920040a9fb91f91ab9ea4, type: 3}
+  - {fileID: 21300000, guid: 884d027ba64af6249846196e9e81a413, type: 3}
+  TimeLimit: 30
+  IngredientsCount: 20
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -135,14 +149,91 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
+      propertyPath: Recipe.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: Ingredients.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: OtherIngredients.Array.size
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: Ingredients.Array.data[0]
       value: 
       objectReference: {fileID: 21300000, guid: a1ebfb4c1e5175f47acc7f5e94d3b83e,
         type: 3}
+    - target: {fileID: 0}
+      propertyPath: OtherIngredients.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 6296cd3c582831e4aa29a783322e8fed,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: IngredientsCount
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: TimeLimit
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Recipe.Array.data[0].Ingredient
+      value: 
+      objectReference: {fileID: 21300000, guid: 00d8bfa925595604c85bf6a3c5cd8da2,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: Recipe.Array.data[0].Amount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Recipe.Array.data[1].Ingredient
+      value: 
+      objectReference: {fileID: 21300000, guid: 3663a5ddd446a804d97ad5919697c413,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: Recipe.Array.data[1].Amount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Recipe.Array.data[2].Ingredient
+      value: 
+      objectReference: {fileID: 21300000, guid: 1a5d76d1a94eb4b4fb2b32ff309b4445,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: Recipe.Array.data[2].Amount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: OtherIngredients.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: ca054d65b28ea5243b240de66ad4a230,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: OtherIngredients.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: c5a5a9d219c920040a9fb91f91ab9ea4,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: OtherIngredients.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: 884d027ba64af6249846196e9e81a413,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: OtherIngredients.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 385b3bc86180a4d48bd3d1c772eb0d90,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: OtherIngredients.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 980562c7e38c511428b566319d2835af,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: AngularSpeed
+      value: -60
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 187626}
