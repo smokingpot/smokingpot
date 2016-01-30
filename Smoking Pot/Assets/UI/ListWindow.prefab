@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Padding:
     m_Left: 0
     m_Right: 0
-    m_Top: 30
+    m_Top: 170
     m_Bottom: 0
   m_ChildAlignment: 0
   m_Spacing: 0
@@ -340,14 +340,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8897059, g: 0.6698962, b: 0.34018168, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 183e3267b3d81bd4eb26a786b604f902, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 267adc9edb59b3e48866bdacbf574ea0, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -429,10 +429,10 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 22464690}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000030518, y: -78}
+  m_AnchoredPosition: {x: -0.000030518, y: -88}
   m_SizeDelta: {x: -109, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22443276
@@ -446,11 +446,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 22464690}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 40}
-  m_SizeDelta: {x: -109, y: -389}
+  m_AnchoredPosition: {x: 0, y: 91.75002}
+  m_SizeDelta: {x: -109, y: -195.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22464690
 RectTransform:
@@ -462,8 +462,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 22417172}
   - {fileID: 22443276}
+  - {fileID: 22417172}
   - {fileID: 22478078}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -505,8 +505,8 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -0.000030041, y: 123}
-  m_SizeDelta: {x: 498, y: 192}
+  m_AnchoredPosition: {x: 0, y: 99}
+  m_SizeDelta: {x: 470, y: 163}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22493456
 RectTransform:
