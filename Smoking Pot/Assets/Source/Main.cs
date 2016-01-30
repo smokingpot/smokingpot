@@ -18,7 +18,10 @@ public class Main : MonoBehaviour
     private void Start()
     {
         Application.targetFrameRate = 60;
+
         _selectedLevelNumber = 0; //TODO: select from UI
+        LoadGame();
+
         OpenRecipeWindow();
     }
 
@@ -28,7 +31,7 @@ public class Main : MonoBehaviour
         _currentGame = gameObj.GetComponent<Game>();
 
         GameObject levelPrefab = Levels[_selectedLevelNumber];
-        _currentGame.Begin(levelPrefab);
+        _currentGame.Create(levelPrefab);
     }
 
     private void EndGame()
@@ -59,6 +62,7 @@ public class Main : MonoBehaviour
         }
 
         _recipeWindow = OpenWindow<RecipeWindow>(RecipeWindowPrefab);
+        _recipeWindow.ShowRecipe(_currentGame.CurrentLevel.Recipe);
         _recipeWindow.PlayClick += HandlePlayClick;
     }
 
@@ -76,7 +80,7 @@ public class Main : MonoBehaviour
     private void HandlePlayClick()
     {
         CloseRecipeWindow();
-        LoadGame();
+        _currentGame.Begin();
     }
 
     #endregion

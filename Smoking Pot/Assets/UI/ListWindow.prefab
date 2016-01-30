@@ -154,6 +154,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01377000363b9d64caa549030163472f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ItemPrefab: {fileID: 136672, guid: e035f5de297cc1a4e9c9da1ae8009d5d, type: 2}
+  Container: {fileID: 22443276}
 --- !u!114 &11407294
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -546,6 +548,14 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: ItemPrefab
+      value: 
+      objectReference: {fileID: 136672, guid: e035f5de297cc1a4e9c9da1ae8009d5d, type: 2}
+    - target: {fileID: 0}
+      propertyPath: Container
+      value: 
+      objectReference: {fileID: 22443276}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 122290}
