@@ -7,7 +7,20 @@ public class Level : MonoBehaviour
     public class RecipeElement
     {
         public Sprite Ingredient;
-        public int Amount;
+        public int AmountMin;
+        public int AmountMax;
+
+        private int _amount;
+
+        public int Amount
+        {
+            get { return _amount; }
+        }
+
+        public void GenerateAmount()
+        {
+            _amount = UnityEngine.Random.Range(AmountMin, AmountMax);
+        }
     }
 
     public RecipeElement[] Recipe;
@@ -26,5 +39,13 @@ public class Level : MonoBehaviour
         SpawnPoint[] points = SpawnPoints;
         int pointNum = UnityEngine.Random.Range(0, points.Length);
         return points[pointNum];
+    }
+
+    public void Init()
+    {
+        foreach (var elem in Recipe)
+        {
+            elem.GenerateAmount();
+        }
     }
 }

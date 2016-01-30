@@ -22,6 +22,7 @@ public class Game : MonoBehaviour
         GameObject levelObj = Instantiate(levelPrefab);
         levelObj.transform.SetParent(transform, false);
         _level = levelObj.GetComponent<Level>();
+        _level.Init();
     }
 
     public Level CurrentLevel
