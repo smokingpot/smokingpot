@@ -27,6 +27,11 @@ public class Ingredient : MonoBehaviour
     {
         _renderer.sprite = sprite;
         transform.position = point.transform.position;
+        Init(point);
+    }
+
+    public void Init(SpawnPoint point)
+    {
         _rigidbody.velocity = point.MinVelocity;
     }
 
