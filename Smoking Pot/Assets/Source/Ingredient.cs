@@ -37,8 +37,8 @@ public class Ingredient : MonoBehaviour
 
     public void Init(SpawnPoint point)
     {
-        _rigidbody.velocity = point.MinVelocity;
-        _rigidbody.angularVelocity = point.AngularSpeed;
+        _rigidbody.velocity = point.GetRandomVelocity();
+        _rigidbody.angularVelocity = point.GetRandomAngularSpeed();
     }
 
     public void AddForce(Vector2 force)
