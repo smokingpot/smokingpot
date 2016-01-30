@@ -30,6 +30,8 @@ public class Level : MonoBehaviour
     public float LastIngredientTime;
     public int IngredientsCount;
 
+    private int _number;
+
     public SpawnPoint[] SpawnPoints
     {
         get { return gameObject.GetComponentsInChildren<SpawnPoint>(); }
@@ -42,11 +44,17 @@ public class Level : MonoBehaviour
         return points[pointNum];
     }
 
-    public void Init()
+    public void Init(int number)
     {
+        _number = number;
         foreach (var elem in Recipe)
         {
             elem.GenerateAmount();
         }
+    }
+
+    public int Number
+    {
+        get { return _number; }
     }
 }
