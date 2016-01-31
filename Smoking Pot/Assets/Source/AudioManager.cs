@@ -9,6 +9,9 @@ public class AudioManager : MonoBehaviour {
 	public AudioSource potAudio;
 	public AudioSource gameAudio;
 	public AudioSource uiAudio;
+    public AudioSource victoryAudio;
+    public AudioSource mediumVictoryAudio;
+    public AudioSource defeatAudio;
 
 	public AudioClip music;
 	public AudioClip backgroundSounds;
@@ -54,4 +57,18 @@ public class AudioManager : MonoBehaviour {
 		uiAudio.Play ();
 	}
 
+    public void playVictorySound()
+    {
+        victoryAudio.Play();
+    }
+
+    public void playMediumVictorySound()
+    {
+        mediumVictoryAudio.Play();
+    }
+
+    public void playDefeatSound()
+    {
+        defeatAudio.Play();
+    }
 }

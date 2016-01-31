@@ -33,5 +33,18 @@ public class Pot : MonoBehaviour
     {
         _animator.SetInteger("SummonScore", score);
         _animator.SetTrigger("Summon");
+
+        if (score > 90)
+        {
+            AudioManager.Instance.playVictorySound();
+        }
+        else if (score > 50)
+        {
+            AudioManager.Instance.playMediumVictorySound();
+        }
+        else
+        {
+            AudioManager.Instance.playDefeatSound();
+        }
     }
 }
