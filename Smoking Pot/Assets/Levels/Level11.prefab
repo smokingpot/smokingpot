@@ -1,65 +1,15 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &122916
+--- !u!1 &116738
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 469642}
-  - 114: {fileID: 11416720}
-  - 212: {fileID: 21230234}
-  m_Layer: 0
-  m_Name: Point4
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &131822
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 490266}
-  - 114: {fileID: 11461174}
-  m_Layer: 0
-  m_Name: Level01
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &196396
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 471268}
-  - 114: {fileID: 11472090}
-  - 212: {fileID: 21298296}
-  m_Layer: 0
-  m_Name: Point3
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &199208
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 456770}
-  - 114: {fileID: 11497490}
-  - 212: {fileID: 21203440}
+  - 4: {fileID: 452438}
+  - 114: {fileID: 11490392}
+  - 212: {fileID: 21255554}
   m_Layer: 0
   m_Name: Point1
   m_TagString: Untagged
@@ -67,137 +17,187 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &456770
+--- !u!1 &117650
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 485820}
+  - 114: {fileID: 11434138}
+  m_Layer: 0
+  m_Name: Level11
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &118284
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 407050}
+  - 114: {fileID: 11429818}
+  - 212: {fileID: 21275978}
+  m_Layer: 0
+  m_Name: Point4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &126204
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 414830}
+  - 114: {fileID: 11483772}
+  - 212: {fileID: 21280752}
+  m_Layer: 0
+  m_Name: Point3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &407050
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 199208}
-  m_LocalRotation: {x: 0, y: 0, z: -0.7113346, w: 0.7028536}
-  m_LocalPosition: {x: -2.47, y: 5.55, z: 0}
+  m_GameObject: {fileID: 118284}
+  m_LocalRotation: {x: 0, y: 0, z: 0.36967498, w: 0.9291612}
+  m_LocalPosition: {x: -8.73, y: -5.01, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
-  m_Father: {fileID: 490266}
-  m_RootOrder: 0
---- !u!4 &469642
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 122916}
-  m_LocalRotation: {x: 0, y: 0, z: -0.45604277, w: 0.88995785}
-  m_LocalPosition: {x: -7.0300007, y: 5.51, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1}
-  m_Children: []
-  m_Father: {fileID: 490266}
+  m_Father: {fileID: 485820}
   m_RootOrder: 2
---- !u!4 &471268
+--- !u!4 &414830
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 196396}
-  m_LocalRotation: {x: 0, y: 0, z: -0.90534776, w: 0.42467096}
-  m_LocalPosition: {x: 2.1700003, y: 5.63, z: 0}
+  m_GameObject: {fileID: 126204}
+  m_LocalRotation: {x: 0, y: 0, z: -0.9274144, w: -0.37403554}
+  m_LocalPosition: {x: 3.91, y: -5, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
-  m_Father: {fileID: 490266}
+  m_Father: {fileID: 485820}
   m_RootOrder: 1
---- !u!4 &490266
+--- !u!4 &452438
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 131822}
+  m_GameObject: {fileID: 116738}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7113346, w: 0.7028536}
+  m_LocalPosition: {x: -2.42, y: 5.98, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_Children: []
+  m_Father: {fileID: 485820}
+  m_RootOrder: 0
+--- !u!4 &485820
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 117650}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.47, y: 1.53, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 456770}
-  - {fileID: 471268}
-  - {fileID: 469642}
+  - {fileID: 452438}
+  - {fileID: 414830}
+  - {fileID: 407050}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &11416720
+--- !u!114 &11429818
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 122916}
+  m_GameObject: {fileID: 118284}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e65ef0302e20dea4791ed45e506bbe86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpeedMin: 2
-  SpeedMax: 3
+  SpeedMin: 13
+  SpeedMax: 14
   RandomAngle: 60
   AngularSpeedMin: -100
   AngularSpeedMax: 100
   TestIngredient: {fileID: 0}
---- !u!114 &11461174
+--- !u!114 &11434138
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 131822}
+  m_GameObject: {fileID: 117650}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7badc324ceb3b304d822f63826eb909b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Recipe:
-  - Ingredient: {fileID: 21300000, guid: 6296cd3c582831e4aa29a783322e8fed, type: 3}
-    AmountMin: 3
-    AmountMax: 3
-  - Ingredient: {fileID: 21300000, guid: 3663a5ddd446a804d97ad5919697c413, type: 3}
-    AmountMin: 3
-    AmountMax: 3
+  - Ingredient: {fileID: 21300000, guid: c5a5a9d219c920040a9fb91f91ab9ea4, type: 3}
+    AmountMin: 1
+    AmountMax: 2
+  - Ingredient: {fileID: 21300000, guid: ca054d65b28ea5243b240de66ad4a230, type: 3}
+    AmountMin: 6
+    AmountMax: 7
   OtherIngredients:
-  - {fileID: 21300000, guid: 980562c7e38c511428b566319d2835af, type: 3}
-  TimeLimit: 14
+  - {fileID: 21300000, guid: 1a5d76d1a94eb4b4fb2b32ff309b4445, type: 3}
+  TimeLimit: 25
   LastIngredientTime: 5
-  IngredientsCount: 9
---- !u!114 &11472090
+  IngredientsCount: 100
+--- !u!114 &11483772
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 196396}
+  m_GameObject: {fileID: 126204}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e65ef0302e20dea4791ed45e506bbe86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpeedMin: 2
-  SpeedMax: 3
+  SpeedMin: 13
+  SpeedMax: 14
   RandomAngle: 60
   AngularSpeedMin: -100
   AngularSpeedMax: 100
   TestIngredient: {fileID: 0}
---- !u!114 &11497490
+--- !u!114 &11490392
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 199208}
+  m_GameObject: {fileID: 116738}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e65ef0302e20dea4791ed45e506bbe86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpeedMin: 2
-  SpeedMax: 3
+  SpeedMin: 3
+  SpeedMax: 4
   RandomAngle: 60
-  AngularSpeedMin: -100
-  AngularSpeedMax: 100
+  AngularSpeedMin: -130
+  AngularSpeedMax: 130
   TestIngredient: {fileID: 0}
---- !u!212 &21203440
+--- !u!212 &21255554
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 199208}
+  m_GameObject: {fileID: 116738}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -222,12 +222,12 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
---- !u!212 &21230234
+--- !u!212 &21275978
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 122916}
+  m_GameObject: {fileID: 118284}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -252,12 +252,12 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
---- !u!212 &21298296
+--- !u!212 &21280752
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 196396}
+  m_GameObject: {fileID: 126204}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -290,42 +290,10 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
-      propertyPath: TimeLimit
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: Recipe.Array.data[0].Amount
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: Recipe.Array.data[1].Amount
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: IngredientsCount
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: Recipe.Array.data[0].AmountMin
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: Recipe.Array.data[0].AmountMax
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: Recipe.Array.data[1].AmountMin
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: Recipe.Array.data[1].AmountMax
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
       propertyPath: LastIngredientTime
       value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 131822}
+  m_RootGameObject: {fileID: 117650}
   m_IsPrefabParent: 1
