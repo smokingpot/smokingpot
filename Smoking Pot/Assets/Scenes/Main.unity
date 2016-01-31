@@ -996,6 +996,7 @@ MonoBehaviour:
   - {fileID: 124652, guid: b0471ef53ab70174db51c07ee1ac3c8d, type: 2}
   GamePrefab: {fileID: 111366, guid: 441f7babb7b1ad941a5db17aa627caf6, type: 2}
   UICanvas: {fileID: 1748199512}
+  LogoWindowPrefab: {fileID: 148932, guid: 5dfeed70b85e6c24dbce30f87b8b9951, type: 2}
   LevelSelectionWindowPrefab: {fileID: 173980, guid: 76017d42f6ff3864ca3e53689c272fa7,
     type: 2}
   RecipeWindowPrefab: {fileID: 122290, guid: 741abbf055c2b5548845fd88e2525f8c, type: 2}
