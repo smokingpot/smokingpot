@@ -159,8 +159,8 @@ Transform:
   m_LocalPosition: {x: 5.17, y: 5.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 1407711267}
+  m_RootOrder: 6
 --- !u!1 &278614740
 GameObject:
   m_ObjectHideFlags: 0
@@ -491,8 +491,8 @@ Transform:
   m_LocalPosition: {x: 3.33, y: 1.13, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_Father: {fileID: 1407711267}
+  m_RootOrder: 8
 --- !u!1 &794695822
 GameObject:
   m_ObjectHideFlags: 0
@@ -567,8 +567,8 @@ Transform:
   m_LocalPosition: {x: 2.55, y: 4.53, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_Father: {fileID: 1407711267}
+  m_RootOrder: 9
 --- !u!1 &820746805
 GameObject:
   m_ObjectHideFlags: 0
@@ -643,8 +643,8 @@ Transform:
   m_LocalPosition: {x: 5.09, y: 0.93, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 1407711267}
+  m_RootOrder: 5
 --- !u!1 &1150168984
 GameObject:
   m_ObjectHideFlags: 0
@@ -719,8 +719,8 @@ Transform:
   m_LocalPosition: {x: 2.02, y: 2.44, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Father: {fileID: 1407711267}
+  m_RootOrder: 4
 --- !u!1 &1384241788
 GameObject:
   m_ObjectHideFlags: 0
@@ -812,6 +812,12 @@ Transform:
   - {fileID: 278614742}
   - {fileID: 1384241790}
   - {fileID: 614907876}
+  - {fileID: 1150168987}
+  - {fileID: 820746808}
+  - {fileID: 40573619}
+  - {fileID: 1803990623}
+  - {fileID: 667073962}
+  - {fileID: 794695825}
   m_Father: {fileID: 0}
   m_RootOrder: 4
 --- !u!95 &1407711268
@@ -1342,8 +1348,8 @@ Transform:
   m_LocalPosition: {x: 5.09, y: 0.93, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 1407711267}
+  m_RootOrder: 7
 --- !u!1 &1829516686
 GameObject:
   m_ObjectHideFlags: 0
@@ -1494,4 +1500,4 @@ Transform:
   - {fileID: 1545956814}
   - {fileID: 1829516688}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 5
