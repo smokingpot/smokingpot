@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Level : MonoBehaviour
@@ -27,7 +28,6 @@ public class Level : MonoBehaviour
     public Sprite[] OtherIngredients;
 
     public float TimeLimit;
-    public float LastIngredientTime;
     public int IngredientsCount;
 
     private int _number;
@@ -45,8 +45,20 @@ public class Level : MonoBehaviour
 
     public SpawnPoint GetRandomSpawnPoint()
     {
-        SpawnPoint[] points = SpawnPoints;
-        int pointNum = UnityEngine.Random.Range(0, points.Length);
+        SpawnPoint[] allPoints = SpawnPoints;
+        List<SpawnPoint> points = new List<SpawnPoint>(allPoints.Length);
+        foreach (var p in allPoints)
+        {
+            if (!p.IsLocked) // add only unlocked points for randomizer
+            {
+                points.Add(p);
+            }
+        }
+        if (points.Count == 0) // all of them are locked
+        {
+            points.AddRange(allPoints);
+        }
+        int pointNum = UnityEngine.Random.Range(0, points.Count);
         return points[pointNum];
     }
 

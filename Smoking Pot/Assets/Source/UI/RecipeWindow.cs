@@ -11,6 +11,7 @@ public class RecipeWindow : GameWindow
 
     public void OnPlayClick()
     {
+		AudioManager.Instance.playClickSound ();
         if (PlayClick != null)
         {
             PlayClick();

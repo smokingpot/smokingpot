@@ -3,13 +3,35 @@ using UnityEngine;
 
 public class Pot : MonoBehaviour
 {
-	public event Action<Ingredient> IngredientCaught;
+    public event Action<Ingredient> IngredientCaught;
+    public event Action SummonCompleted;
 
-	public void OnIngredientCaught(Ingredient ingredient) {
-		if (IngredientCaught == null) {
-			return;
-		}
-		IngredientCaught (ingredient);
-	}
+    private Animator _animator;
 
+    private void Awake()
+    {
+        _animator = GetComponent<Animator>();
+    }
+
+    public void OnIngredientCaught(Ingredient ingredient)
+    {
+        if (IngredientCaught != null)
+        {
+            IngredientCaught(ingredient);
+        }
+    }
+
+    public void OnEndAnimationEnded()
+    {
+        if (SummonCompleted != null)
+        {
+            SummonCompleted();
+        }
+    }
+
+    public void StartSummonAnimation(int score)
+    {
+        _animator.SetInteger("SummonScore", score);
+        _animator.SetTrigger("Summon");
+    }
 }

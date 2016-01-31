@@ -79,7 +79,7 @@ public class Game : MonoBehaviour
         float[] spawnTimes = new float[_level.IngredientsCount];
         for (int i = 0; i < spawnTimes.Length; i++)
         {
-            spawnTimes[i] = UnityEngine.Random.Range(0.0f, _level.TimeLimit - _level.LastIngredientTime);
+            spawnTimes[i] = UnityEngine.Random.Range(0.0f, _level.TimeLimit);
         }
         Array.Sort(spawnTimes);
 
@@ -104,13 +104,20 @@ public class Game : MonoBehaviour
         Destroy(ingredient.gameObject);
     }
 
+    private void HandleSummonCompleted()
+    {
+        OnEnd();
+    }
+
     private void Start()
     {
         GameObject potObj = Instantiate(PotPrefab);
         potObj.transform.SetParent(transform, false);
         _pot = potObj.GetComponent<Pot>();
         _pot.gameObject.SetActive(false);
+
         _pot.IngredientCaught += HandleCaught;
+        _pot.SummonCompleted += HandleSummonCompleted;
 
         foreach (var point in TestSpawnPoints)
         {
@@ -124,6 +131,7 @@ public class Game : MonoBehaviour
     private void OnDestroy()
     {
         _pot.IngredientCaught -= HandleCaught;
+        _pot.SummonCompleted -= HandleSummonCompleted;
     }
 
     private void Update()
@@ -134,9 +142,12 @@ public class Game : MonoBehaviour
         }
 
         _playTime += Time.deltaTime;
-        if (_playTime > _level.TimeLimit)
+        if (_playTime > _level.TimeLimit
+            && _ingredients.Count == 0
+            && Ingredient.Counter == 0)
         {
-            OnEnd();
+            _running = false;
+            _pot.StartSummonAnimation(_level.GetResult());
         }
 
         if (_ingredients.Count > 0 && Time.realtimeSinceStartup > _nextSpawnTime)
@@ -158,6 +169,7 @@ public class Game : MonoBehaviour
         ingredientObj.transform.SetParent(transform, false);
         Ingredient ingredient = ingredientObj.GetComponent<Ingredient>();
         ingredient.Init(point, sprite);
+        point.Lock();
     }
 
     private void Shuffle<T>(T[] arr)

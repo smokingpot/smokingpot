@@ -11,6 +11,7 @@ public class LevelCompletedWindow : GameWindow
 
     public void OnReplayClick()
     {
+		AudioManager.Instance.playClickSound ();
         if (ReplayClick != null)
         {
             ReplayClick();
@@ -19,6 +20,7 @@ public class LevelCompletedWindow : GameWindow
 
     public void OnExitClick()
     {
+		AudioManager.Instance.playClickSound ();
         if (ExitClick != null)
         {
             ExitClick();

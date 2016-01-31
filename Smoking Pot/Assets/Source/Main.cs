@@ -8,10 +8,12 @@ public class Main : MonoBehaviour
     public GameObject GamePrefab;
 
     public Canvas UICanvas;
+    public GameObject LogoWindowPrefab;
     public GameObject LevelSelectionWindowPrefab;
     public GameObject RecipeWindowPrefab;
     public GameObject LevelCompletedWindowPrefab;
 
+    private LogoWindow _logoWindow;
     private LevelSelectionWindow _levelSelectionWindow;
     private RecipeWindow _recipeWindow;
     private LevelCompletedWindow _levelCompletedWindow;
@@ -39,8 +41,7 @@ public class Main : MonoBehaviour
             level.gameObject.SetActive(false);
         }
 
-        OpenLevelSelectionWindow();
-		AudioManager.Instance.playMenuMusic ();
+        OpenLogoWindow();
     }
 
     private void LoadGame()
@@ -156,6 +157,8 @@ public class Main : MonoBehaviour
         _levelSelectionWindow = OpenWindow<LevelSelectionWindow>(LevelSelectionWindowPrefab);
         _levelSelectionWindow.LevelSelected += HandleLevelSelected;
         _levelSelectionWindow.AddLevels(_levelInstances);
+
+        AudioManager.Instance.playMenuMusic();
     }
 
     private void CloseLevelSelectionWindow()
@@ -169,6 +172,28 @@ public class Main : MonoBehaviour
         _selectedLevelNumber = levelNumber;
         CloseLevelSelectionWindow();
         StartSelectedGame();
+    }
+
+    #endregion
+
+    #region Logo Window
+
+    private void OpenLogoWindow()
+    {
+        _logoWindow = OpenWindow<LogoWindow>(LogoWindowPrefab);
+        _logoWindow.Close += HandleCloseLogo;
+    }
+
+    private void CloseLogoWindow()
+    {
+        _logoWindow.Close -= HandleCloseLogo;
+        CloseWindow(ref _logoWindow);
+    }
+
+    private void HandleCloseLogo()
+    {
+        CloseLogoWindow();
+        OpenLevelSelectionWindow();
     }
 
     #endregion
