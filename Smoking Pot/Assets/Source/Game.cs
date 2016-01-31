@@ -104,13 +104,20 @@ public class Game : MonoBehaviour
         Destroy(ingredient.gameObject);
     }
 
+    private void HandleSummonCompleted()
+    {
+        OnEnd();
+    }
+
     private void Start()
     {
         GameObject potObj = Instantiate(PotPrefab);
         potObj.transform.SetParent(transform, false);
         _pot = potObj.GetComponent<Pot>();
         _pot.gameObject.SetActive(false);
+
         _pot.IngredientCaught += HandleCaught;
+        _pot.SummonCompleted += HandleSummonCompleted;
 
         foreach (var point in TestSpawnPoints)
         {
@@ -124,6 +131,7 @@ public class Game : MonoBehaviour
     private void OnDestroy()
     {
         _pot.IngredientCaught -= HandleCaught;
+        _pot.SummonCompleted -= HandleSummonCompleted;
     }
 
     private void Update()
@@ -138,7 +146,8 @@ public class Game : MonoBehaviour
             && _ingredients.Count == 0
             && Ingredient.Counter == 0)
         {
-            OnEnd();
+            _running = false;
+            _pot.StartSummonAnimation(_level.GetResult());
         }
 
         if (_ingredients.Count > 0 && Time.realtimeSinceStartup > _nextSpawnTime)
