@@ -9,10 +9,23 @@ public class Ingredient : MonoBehaviour
     private SpriteRenderer _renderer;
     private Rigidbody2D _rigidbody;
 
+    private static int _counter; // how many items alive
+
+    public static int Counter
+    {
+        get { return _counter; }
+    }
+
     private void Awake()
     {
         _renderer = gameObject.GetComponent<SpriteRenderer>();
         _rigidbody = gameObject.GetComponent<Rigidbody2D>();
+        _counter++;
+    }
+
+    private void OnDestroy()
+    {
+        _counter--;
     }
 
     private void Start()

@@ -27,7 +27,6 @@ public class Level : MonoBehaviour
     public Sprite[] OtherIngredients;
 
     public float TimeLimit;
-    public float LastIngredientTime;
     public int IngredientsCount;
 
     private int _number;

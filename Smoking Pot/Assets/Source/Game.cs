@@ -79,7 +79,7 @@ public class Game : MonoBehaviour
         float[] spawnTimes = new float[_level.IngredientsCount];
         for (int i = 0; i < spawnTimes.Length; i++)
         {
-            spawnTimes[i] = UnityEngine.Random.Range(0.0f, _level.TimeLimit - _level.LastIngredientTime);
+            spawnTimes[i] = UnityEngine.Random.Range(0.0f, _level.TimeLimit);
         }
         Array.Sort(spawnTimes);
 
@@ -134,7 +134,9 @@ public class Game : MonoBehaviour
         }
 
         _playTime += Time.deltaTime;
-        if (_playTime > _level.TimeLimit)
+        if (_playTime > _level.TimeLimit
+            && _ingredients.Count == 0
+            && Ingredient.Counter == 0)
         {
             OnEnd();
         }

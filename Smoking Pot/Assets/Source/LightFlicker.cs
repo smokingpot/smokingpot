@@ -8,23 +8,23 @@ public class LightFlicker : MonoBehaviour {
     public float speed = 0.05f;
     double accumulator = 0;
 
-    Light light;
+    Light _light;
 
     // Use this for initialization
 	void Start () {
-        light = GetComponent<Light>();
+        _light = GetComponent<Light>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-        if (!light)
+        if (!_light)
             return;
 
         accumulator += Time.deltaTime;
         while (accumulator > speed)
         {
-            light.intensity = Random.Range(minIntensity, maxIntensity);
+            _light.intensity = Random.Range(minIntensity, maxIntensity);
             accumulator -= speed;
         }
 
