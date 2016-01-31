@@ -8,11 +8,13 @@ public class AudioManager : MonoBehaviour {
 	public AudioSource backgroundAudio;
 	public AudioSource potAudio;
 	public AudioSource gameAudio;
+	public AudioSource uiAudio;
 
 	public AudioClip music;
 	public AudioClip backgroundSounds;
 	public AudioClip splashSound;
 	public AudioClip pushSound;
+	public AudioClip clickSound;
 
 	// Use this for initialization
 	private void Awake () {
@@ -46,5 +48,10 @@ public class AudioManager : MonoBehaviour {
 		potAudio.Play ();
 	}
 
+	public void playClickSound() {
+		uiAudio.Stop ();
+		uiAudio.clip = clickSound;
+		uiAudio.Play ();
+	}
 
 }
