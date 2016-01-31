@@ -175,8 +175,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Credits\n\nRonja P\xF6lkki\nVladimir Chernov\nJoona P\xE4\xE4kk\xF6nen\nAntti
-    Hamara\nMikko Kumara\nSimeon Kurtsma\nBosco Mart\xEDnez\n\n"
+  m_Text: "Credits\n\nAntti Hamara\nBosco Mart\xEDnez\nJoona P\xE4\xE4kk\xF6nen\nMikko
+    Kumara\nRonja P\xF6lkki\nSimeon Kurtsman\nVladimir Chernov\n\n\n\n"
 --- !u!114 &11491380
 MonoBehaviour:
   m_ObjectHideFlags: 1
