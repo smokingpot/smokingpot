@@ -20,6 +20,7 @@ public class LevelEntry : MonoBehaviour
 
     public void OnClick()
     {
+		AudioManager.Instance.playClickSound ();
         _window.OnLevelSelected(_levelNumber);
     }
 }
