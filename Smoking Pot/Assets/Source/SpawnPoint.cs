@@ -8,8 +8,11 @@ public class SpawnPoint : MonoBehaviour
     public float RandomAngle;
     public float AngularSpeedMin;
     public float AngularSpeedMax;
+    public float LockTime = 1.0f;
 
     public Ingredient TestIngredient;
+
+    private float _lastLockTime;
 
     private void OnDrawGizmos()
     {
@@ -46,5 +49,15 @@ public class SpawnPoint : MonoBehaviour
     public float GetRandomAngularSpeed()
     {
         return UnityEngine.Random.Range(AngularSpeedMin, AngularSpeedMax);
+    }
+
+    public void Lock()
+    {
+        _lastLockTime = Time.realtimeSinceStartup;
+    }
+
+    public bool IsLocked
+    {
+        get { return (Time.realtimeSinceStartup - _lastLockTime) < LockTime; }
     }
 }

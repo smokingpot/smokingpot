@@ -160,6 +160,7 @@ public class Game : MonoBehaviour
         ingredientObj.transform.SetParent(transform, false);
         Ingredient ingredient = ingredientObj.GetComponent<Ingredient>();
         ingredient.Init(point, sprite);
+        point.Lock();
     }
 
     private void Shuffle<T>(T[] arr)
