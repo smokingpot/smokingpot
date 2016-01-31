@@ -134,6 +134,7 @@ MonoBehaviour:
   RandomAngle: 60
   AngularSpeedMin: -100
   AngularSpeedMax: 100
+  LockTime: 1
   TestIngredient: {fileID: 0}
 --- !u!114 &11456552
 MonoBehaviour:
@@ -151,6 +152,7 @@ MonoBehaviour:
   RandomAngle: 90
   AngularSpeedMin: -100
   AngularSpeedMax: 100
+  LockTime: 1
   TestIngredient: {fileID: 0}
 --- !u!114 &11459584
 MonoBehaviour:
@@ -168,6 +170,7 @@ MonoBehaviour:
   RandomAngle: 60
   AngularSpeedMin: -100
   AngularSpeedMax: 100
+  LockTime: 1
   TestIngredient: {fileID: 0}
 --- !u!114 &11484756
 MonoBehaviour:
@@ -185,8 +188,7 @@ MonoBehaviour:
     AmountMin: 18
     AmountMax: 18
   OtherIngredients: []
-  TimeLimit: 20
-  LastIngredientTime: 4
+  TimeLimit: 32
   IngredientsCount: 36
 --- !u!212 &21203402
 SpriteRenderer:
@@ -284,7 +286,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: TimeLimit
+      value: 32
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 164466}

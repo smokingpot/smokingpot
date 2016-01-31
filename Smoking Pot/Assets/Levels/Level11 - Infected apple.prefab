@@ -137,12 +137,12 @@ MonoBehaviour:
     AmountMin: 6
     AmountMax: 6
   - Ingredient: {fileID: 21300000, guid: 980562c7e38c511428b566319d2835af, type: 3}
-    AmountMin: 8
-    AmountMax: 8
+    AmountMin: 6
+    AmountMax: 6
   OtherIngredients:
   - {fileID: 21300000, guid: 385b3bc86180a4d48bd3d1c772eb0d90, type: 3}
-  TimeLimit: 40
-  IngredientsCount: 38
+  TimeLimit: 36
+  IngredientsCount: 32
 --- !u!114 &11440724
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -159,6 +159,7 @@ MonoBehaviour:
   RandomAngle: 60
   AngularSpeedMin: 180
   AngularSpeedMax: 180
+  LockTime: 1
   TestIngredient: {fileID: 0}
 --- !u!114 &11444524
 MonoBehaviour:
@@ -176,6 +177,7 @@ MonoBehaviour:
   RandomAngle: 60
   AngularSpeedMin: -20
   AngularSpeedMax: 20
+  LockTime: 1
   TestIngredient: {fileID: 0}
 --- !u!114 &11483612
 MonoBehaviour:
@@ -193,6 +195,7 @@ MonoBehaviour:
   RandomAngle: 60
   AngularSpeedMin: -180
   AngularSpeedMax: -180
+  LockTime: 1
   TestIngredient: {fileID: 0}
 --- !u!212 &21225042
 SpriteRenderer:
@@ -311,6 +314,22 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 385b3bc86180a4d48bd3d1c772eb0d90,
         type: 3}
+    - target: {fileID: 0}
+      propertyPath: Recipe.Array.data[2].AmountMin
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Recipe.Array.data[2].AmountMax
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: IngredientsCount
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: TimeLimit
+      value: 36
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 120612}
