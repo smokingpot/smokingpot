@@ -129,8 +129,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e65ef0302e20dea4791ed45e506bbe86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpeedMin: 13
-  SpeedMax: 14
+  SpeedMin: 11
+  SpeedMax: 12
   RandomAngle: 60
   AngularSpeedMin: -100
   AngularSpeedMax: 100
@@ -187,8 +187,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e65ef0302e20dea4791ed45e506bbe86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpeedMin: 13
-  SpeedMax: 14
+  SpeedMin: 11
+  SpeedMax: 12
   RandomAngle: 60
   AngularSpeedMin: -100
   AngularSpeedMax: 100
