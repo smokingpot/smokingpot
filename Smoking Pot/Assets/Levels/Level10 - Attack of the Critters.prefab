@@ -134,6 +134,7 @@ MonoBehaviour:
   RandomAngle: 90
   AngularSpeedMin: -100
   AngularSpeedMax: 100
+  LockTime: 1
   TestIngredient: {fileID: 0}
 --- !u!114 &11449172
 MonoBehaviour:
@@ -151,6 +152,7 @@ MonoBehaviour:
   RandomAngle: 60
   AngularSpeedMin: -100
   AngularSpeedMax: 100
+  LockTime: 1
   TestIngredient: {fileID: 0}
 --- !u!114 &11479998
 MonoBehaviour:
@@ -179,7 +181,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 1a5d76d1a94eb4b4fb2b32ff309b4445, type: 3}
   - {fileID: 21300000, guid: d7172fd687730304ab6491bded4582cf, type: 3}
   - {fileID: 21300000, guid: 980562c7e38c511428b566319d2835af, type: 3}
-  TimeLimit: 28
+  TimeLimit: 32
   IngredientsCount: 35
 --- !u!114 &11490620
 MonoBehaviour:
@@ -197,6 +199,7 @@ MonoBehaviour:
   RandomAngle: 60
   AngularSpeedMin: -100
   AngularSpeedMax: 100
+  LockTime: 1
   TestIngredient: {fileID: 0}
 --- !u!212 &21212248
 SpriteRenderer:
@@ -342,6 +345,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: OtherIngredients.Array.data[5]
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: TimeLimit
+      value: 32
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

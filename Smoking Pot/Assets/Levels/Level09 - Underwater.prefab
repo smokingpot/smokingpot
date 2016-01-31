@@ -104,6 +104,7 @@ MonoBehaviour:
   RandomAngle: 60
   AngularSpeedMin: -100
   AngularSpeedMax: 100
+  LockTime: 1
   TestIngredient: {fileID: 0}
 --- !u!114 &11475190
 MonoBehaviour:
@@ -121,15 +122,15 @@ MonoBehaviour:
     AmountMin: 4
     AmountMax: 4
   - Ingredient: {fileID: 21300000, guid: d7172fd687730304ab6491bded4582cf, type: 3}
-    AmountMin: 6
-    AmountMax: 6
+    AmountMin: 3
+    AmountMax: 3
   - Ingredient: {fileID: 21300000, guid: f04594f9c5a5f2543b08231d149952eb, type: 3}
-    AmountMin: 6
-    AmountMax: 6
+    AmountMin: 3
+    AmountMax: 3
   OtherIngredients:
   - {fileID: 21300000, guid: 1a5d76d1a94eb4b4fb2b32ff309b4445, type: 3}
-  TimeLimit: 40
-  IngredientsCount: 35
+  TimeLimit: 30
+  IngredientsCount: 25
 --- !u!114 &11497522
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -146,6 +147,7 @@ MonoBehaviour:
   RandomAngle: 60
   AngularSpeedMin: -100
   AngularSpeedMax: 100
+  LockTime: 1
   TestIngredient: {fileID: 0}
 --- !u!212 &21241490
 SpriteRenderer:
@@ -220,11 +222,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: IngredientsCount
-      value: 35
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: TimeLimit
-      value: 40
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: Recipe.Array.data[0].AmountMin
@@ -236,19 +238,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: Recipe.Array.data[1].AmountMin
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: Recipe.Array.data[1].AmountMax
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: Recipe.Array.data[2].AmountMin
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: Recipe.Array.data[2].AmountMax
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: Recipe.Array.data[1].Ingredient
