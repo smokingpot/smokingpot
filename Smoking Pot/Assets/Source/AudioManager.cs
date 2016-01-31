@@ -5,7 +5,8 @@ public class AudioManager : MonoBehaviour {
 
 	private static AudioManager _instance;
 
-	public AudioSource backgroundAudio;
+	public AudioSource backgroundMusic;
+	public AudioSource backgroundAmbience;
 	public AudioSource potAudio;
 	public AudioSource gameAudio;
 	public AudioSource uiAudio;
@@ -14,6 +15,7 @@ public class AudioManager : MonoBehaviour {
     public AudioSource defeatAudio;
 
 	public AudioClip music;
+	public AudioClip drumming;
 	public AudioClip backgroundSounds;
 	public AudioClip splashSound;
 	public AudioClip pushSound;
@@ -31,15 +33,20 @@ public class AudioManager : MonoBehaviour {
 	}
 
 	public void playMenuMusic() {
-		backgroundAudio.Stop ();
-		backgroundAudio.clip = music;
-		backgroundAudio.Play ();
+		backgroundMusic.Stop ();
+		backgroundMusic.clip = music;
+		backgroundMusic.Play ();
+		backgroundAmbience.Stop ();
 	}
 
 	public void playGameMusic() {
-		backgroundAudio.Stop ();
-		backgroundAudio.clip = backgroundSounds;
-		backgroundAudio.Play ();
+		Debug.Log ("Play game music");
+		backgroundMusic.Stop ();
+		backgroundMusic.clip = drumming;
+		backgroundMusic.Play ();
+		backgroundAmbience.Stop ();
+		backgroundAmbience.clip = backgroundSounds;
+		backgroundAmbience.Play ();
 	}
 
 	public void playPushSound() {
@@ -59,16 +66,22 @@ public class AudioManager : MonoBehaviour {
 
     public void playVictorySound()
     {
+		backgroundAmbience.Stop ();
+		backgroundMusic.Stop ();
         victoryAudio.Play();
     }
 
     public void playMediumVictorySound()
     {
+		backgroundAmbience.Stop ();
+		backgroundMusic.Stop ();
         mediumVictoryAudio.Play();
     }
 
     public void playDefeatSound()
     {
+		backgroundAmbience.Stop ();
+		backgroundMusic.Stop ();
         defeatAudio.Play();
     }
 }
