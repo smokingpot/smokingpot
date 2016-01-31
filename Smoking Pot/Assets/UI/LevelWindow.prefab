@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!1 &111832
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
@@ -382,7 +382,6 @@ RectTransform:
   m_Children:
   - {fileID: 22418292}
   - {fileID: 22438974}
-  - {fileID: 22476098}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
@@ -416,7 +415,8 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 22476098}
   m_Father: {fileID: 22414356}
   m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 0}
@@ -435,12 +435,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 22478872}
-  m_Father: {fileID: 22414356}
-  m_RootOrder: 2
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 4, y: -53}
-  m_SizeDelta: {x: -212, y: -426}
+  m_Father: {fileID: 22438974}
+  m_RootOrder: 0
+  m_AnchorMin: {x: 0, y: 0.1494859}
+  m_AnchorMax: {x: 1, y: 0.9444859}
+  m_AnchoredPosition: {x: 2.3, y: -0.5}
+  m_SizeDelta: {x: -144.6, y: -3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22478872
 RectTransform:
