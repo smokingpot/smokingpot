@@ -134,6 +134,7 @@ MonoBehaviour:
   RandomAngle: 60
   AngularSpeedMin: -100
   AngularSpeedMax: 100
+  LockTime: 1
   TestIngredient: {fileID: 0}
 --- !u!114 &11428940
 MonoBehaviour:
@@ -151,6 +152,7 @@ MonoBehaviour:
   RandomAngle: 60
   AngularSpeedMin: -100
   AngularSpeedMax: 100
+  LockTime: 1
   TestIngredient: {fileID: 0}
 --- !u!114 &11461624
 MonoBehaviour:
@@ -168,6 +170,7 @@ MonoBehaviour:
   RandomAngle: 90
   AngularSpeedMin: -100
   AngularSpeedMax: 100
+  LockTime: 1
   TestIngredient: {fileID: 0}
 --- !u!114 &11478340
 MonoBehaviour:
@@ -182,15 +185,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Recipe:
   - Ingredient: {fileID: 21300000, guid: f04594f9c5a5f2543b08231d149952eb, type: 3}
-    AmountMin: 6
-    AmountMax: 6
-  - Ingredient: {fileID: 21300000, guid: 4f3b9bbed5d150547918f05ed08e44ae, type: 3}
     AmountMin: 4
     AmountMax: 4
+  - Ingredient: {fileID: 21300000, guid: 4f3b9bbed5d150547918f05ed08e44ae, type: 3}
+    AmountMin: 2
+    AmountMax: 2
   OtherIngredients:
   - {fileID: 21300000, guid: ca054d65b28ea5243b240de66ad4a230, type: 3}
-  TimeLimit: 35
-  IngredientsCount: 20
+  TimeLimit: 22
+  IngredientsCount: 13
 --- !u!212 &21243898
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -290,11 +293,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: TimeLimit
-      value: 35
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: IngredientsCount
-      value: 20
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: Recipe.Array.data[1].Ingredient
@@ -311,6 +314,22 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: ca054d65b28ea5243b240de66ad4a230,
         type: 3}
+    - target: {fileID: 0}
+      propertyPath: Recipe.Array.data[0].AmountMin
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Recipe.Array.data[0].AmountMax
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Recipe.Array.data[1].AmountMin
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Recipe.Array.data[1].AmountMax
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 116012}

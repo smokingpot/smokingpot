@@ -164,6 +164,7 @@ MonoBehaviour:
   RandomAngle: 30
   AngularSpeedMin: 0
   AngularSpeedMax: 80
+  LockTime: 1
   TestIngredient: {fileID: 0}
 --- !u!114 &11442048
 MonoBehaviour:
@@ -178,14 +179,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Recipe:
   - Ingredient: {fileID: 21300000, guid: 1a5d76d1a94eb4b4fb2b32ff309b4445, type: 3}
-    AmountMin: 10
-    AmountMax: 10
+    AmountMin: 6
+    AmountMax: 6
   - Ingredient: {fileID: 21300000, guid: d7172fd687730304ab6491bded4582cf, type: 3}
     AmountMin: 4
     AmountMax: 4
   - Ingredient: {fileID: 21300000, guid: 4f3b9bbed5d150547918f05ed08e44ae, type: 3}
-    AmountMin: 10
-    AmountMax: 10
+    AmountMin: 6
+    AmountMax: 6
   OtherIngredients:
   - {fileID: 21300000, guid: 9ffe91849e427c545b4d252298b12df6, type: 3}
   TimeLimit: 35
@@ -206,6 +207,7 @@ MonoBehaviour:
   RandomAngle: 30
   AngularSpeedMin: -80
   AngularSpeedMax: 0
+  LockTime: 1
   TestIngredient: {fileID: 0}
 --- !u!114 &11472834
 MonoBehaviour:
@@ -223,6 +225,7 @@ MonoBehaviour:
   RandomAngle: 30
   AngularSpeedMin: -80
   AngularSpeedMax: 0
+  LockTime: 1
   TestIngredient: {fileID: 0}
 --- !u!114 &11491250
 MonoBehaviour:
@@ -240,6 +243,7 @@ MonoBehaviour:
   RandomAngle: 30
   AngularSpeedMin: 0
   AngularSpeedMax: 80
+  LockTime: 1
   TestIngredient: {fileID: 0}
 --- !u!212 &21213908
 SpriteRenderer:
@@ -388,6 +392,22 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 9ffe91849e427c545b4d252298b12df6,
         type: 3}
+    - target: {fileID: 0}
+      propertyPath: Recipe.Array.data[0].AmountMin
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Recipe.Array.data[0].AmountMax
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Recipe.Array.data[2].AmountMin
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Recipe.Array.data[2].AmountMax
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 140606}
